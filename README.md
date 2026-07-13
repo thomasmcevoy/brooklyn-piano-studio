@@ -11,12 +11,9 @@ Built with Astro.
 ## Hosting
 
 - Code stored at github
-- 
 
 ## Local Development
-
-Start local dev environment and serve at localhost:4321 :  
-    npm run dev
+`npm run dev` → Start local dev environment and serve at localhost:4321
 
 ## Deployment
 
