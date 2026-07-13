@@ -1,3 +1,11 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const showFooterCta = Astro.url.pathname !== "/contact";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,18 +14,26 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Brooklyn Piano Studio | Private Piano Lessons in Brooklyn, NY</title>
 	</head>
+
 	<body>
-		<slot />
+		<Header/>
+		<main>
+			<slot />
+		</main>
+		<Footer showCta={showFooterCta} />
 	</body>
+
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+body {
+	margin: 0;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
 </style>

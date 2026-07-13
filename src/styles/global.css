@@ -1,0 +1,109 @@
+@import "@picocss/pico";
+
+@font-face {
+  font-family: "Gill Sans";
+  src: url("/src/assets/fonts/GillSansMTPro-Light.otf") format("opentype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Gill Sans";
+  src: url("/src/assets/fonts/GillSansMTPro-Medium.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gill Sans";
+  src: url("/src/assets/fonts/GillSansMTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Gill Sans Book";
+  src: url("/src/assets/fonts/GillSansMTPro-Book.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gill Sans Condensed";
+  src: url("/src/assets/fonts/GillSansMTPro-BoldCondensed.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Brittany Signature";
+  src: url("/src/assets/fonts/BrittanySignature.ttf") format("truetype");
+  font-weight: 400;
+}
+
+:root {
+  /* color variables */
+  /* ---------------------------------------------------- */
+  /* --light-parchment: #e8ddcf; */
+  /* --light-parchment-2: #e8ddcff4; */
+  --light-parchment: #dcd2c5;
+  --parchment: #eee4d5;
+  --dark-parchment: rgb(238 228 213 / 0.72);
+  --dark-parchment-2: #d3c9bc;
+  --extra-dark-parchment: rgb(238 228 213 / 0.52);
+  --footer-text: #5F6470;
+  --footer-text-2: #626771;
+  --footer-text-3: #7D828C;
+  --brown: #3b2721;
+  --brown-dark: #31211C;
+  --brown-ink: #46372d;
+  --dark-brown-ink: #42362d;
+  --ink: #3b3028;
+  --dark-walnut: #31211C;
+  --walnut: #514035;
+  --bright-walnut: #5a4030;
+  --burnt-walnut: #241815;
+  --aged-mahogany: #36231D;
+  --espresso: #2C1D18;
+  --maroon: #800020;
+  --bright-maroon: #951d35;
+  --muted-maroon: #5A3038;
+  --footer-maroon-hover: #742437;
+  --gold: #6a553b;
+  --form-label: #756E67;
+
+  /* bg-[#D8CEBC] text-[#4A4038] */
+  --pico-font-family: "Gill Sans Book", sans-serif;
+
+
+  /* section spacing */
+  /* ---------------------------------------------------- */
+  --section-padding-block: clamp(3rem, 8vw, 6rem);
+  --section-padding-block-large: clamp(5rem, 10vw, 8rem);
+  --section-padding-block-small: clamp(2rem, 6vw, 5rem);
+}
+
+.font-body {
+  font-family: "Gill Sans Book", sans-serif;
+  font-weight: 400
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Gill Sans", sans-serif;
+  font-weight: 700;
+}
+
+a {
+  /* color: var(--maroon); */
+  text-decoration: none;
+  /* border-bottom: 1px solid var(--maroon); */
+  
+}
+
+/* Override Pico container sizing; site uses Container.astro width system */
+.container {
+  max-width: none;
+}
+
+/* Override Pico default header styles; site styles in Header.astro and Nav.astro */
+body > header {
+  padding-block: 0;
+
+}

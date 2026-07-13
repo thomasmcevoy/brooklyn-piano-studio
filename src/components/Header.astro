@@ -1,0 +1,62 @@
+---
+import Nav from '../components/HeaderNav.astro';
+import Grid from '../components/Grid.astro';
+import Container from '../components/Container.astro';
+import Wordmark from '../components/Wordmark.astro';
+---
+
+<header>
+  <!-- <div class="header-inner"> -->
+  <Container size="wide">
+    <Grid columns="2">
+      
+      <a href="/">
+        <!-- <div class="wordmark"> -->
+          <Wordmark text="Brooklyn Piano Studio" class="header-wordmark"/>
+        <!-- </div> -->
+      </a>
+    
+      <Nav/>
+    
+    </Grid>
+  </Container>
+  <!-- </div> -->
+</header>
+
+<style>
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--dark-parchment);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgb(255 255 255 / 0.15);
+  box-shadow: 0 2px 8px rgba(66, 54, 45, 0.06);
+
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: .5rem 2rem;
+}
+
+:global(.header-wordmark) {
+  color: var(--ink);
+  font-size: 1.8rem;
+  position: relative;
+  top: .25rem;
+}
+
+:global(header a) {
+  color: var(--ink);
+  text-decoration: none;
+  transform: translateY(.15em);  /* compensating for gill sans' high vertical placement */
+}
+
+</style>

@@ -1,0 +1,97 @@
+---
+import Button from '../components/Button.astro';
+import Container from '../components/Container.astro';
+import Grid from '../components/Grid.astro';
+import Nav from '../components/FooterNav.astro';
+import Wordmark from '../components/Wordmark.astro';
+
+const { showCta } = Astro.props;
+---
+
+<footer>
+  <Container size="medium-flexible">
+    
+    <div class="wordmark-container">
+      <Wordmark text="Brooklyn Piano Studio" class="footer-wordmark"/>
+    </div>
+
+    <div class="footer-main">
+      <Grid columns={showCta ? 3 : 2} alignItems="start">
+        <div class={`blurb ${!showCta ? "centered" : ""}`}>
+          <p>Private music instruction by appt.</p>
+          <p>Serving greater NYC since 2005</p>
+          <p>Brooklyn, NY 11231</p>
+        </div>
+        
+        <Nav/>
+        
+        {showCta && (
+          <div class='cta-container'>
+            <Button text="BOOK A LESSON" variant="footer"/>
+          </div>
+        )}
+      </Grid>
+    </div>
+
+  <p class="copyright">All content &copy; 2026 Brooklyn Piano Studio</p>
+</Container>
+</footer>
+
+<style>
+footer {
+  padding-block: var(--section-padding-block-small);
+}
+
+.wordmark-container {
+  padding-bottom: .375rem;
+  border-bottom: 1px solid rgba(232, 221, 207, 0.2);
+  text-align: center;
+}
+
+:global(.footer-wordmark) {
+  color: var(--footer-text);
+  font-size: 1.5rem;
+  letter-spacing: .1rem ;
+}
+
+.footer-main {
+  margin-block: .75rem;
+  padding-block: 1rem;
+}
+
+.blurb {
+  text-align: center;
+  width: fit-content;
+}
+
+.blurb p {
+  font-size: .9rem;
+  margin: .4rem 0;
+  color: var(--footer-text-2);
+}
+
+.blurb p:first-of-type {
+  margin-top: 0;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.blurb.centered {
+  text-align: center;
+  width: fit-content;
+  justify-self: center;;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--footer-text-3);
+  opacity: 0.7;
+  margin: 0;
+  position: relative;
+  top: 2.75rem;
+}
+</style>

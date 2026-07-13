@@ -1,0 +1,26 @@
+---
+const { size } = Astro.props;
+---
+
+<div class={`container ${size}`}>
+  <slot />
+</div>
+
+<style>
+.container {
+  width: min(100% - 5rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.wide {
+  --max-width: 64rem;
+}
+
+.medium-flexible {
+  max-width: clamp(400px, 75vw, 1000px);
+}
+
+.narrow {
+  --max-width: 60ch;
+}
+</style>

@@ -1,0 +1,44 @@
+---
+const { class: className = "" } = Astro.props;
+---
+
+<article class={`card ${className}`}>
+  <slot />
+</article>
+
+<style is:global>
+.card {
+  background: inherit;
+  padding: .75rem 0;
+  box-shadow: none;
+}
+
+.card p,
+.card h3,
+.card li {
+  color: var(--parchment);
+}
+
+.card h3 {
+  padding: .25em 0;
+  margin-bottom: 1.25em;
+  font-size: 1.2rem;
+  letter-spacing: .05em;
+  width: 100%;
+  border-bottom: .075em var(--gold) solid;
+}
+
+.card h4 {
+  font-style: italic;
+  color: var(--extra-dark-parchment);
+}
+
+.card ul {
+  padding-inline-start: 0;
+}
+
+.card ul li {
+  list-style-type: none;
+  margin-bottom: .75rem;
+}
+</style>

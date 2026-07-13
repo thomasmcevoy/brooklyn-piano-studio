@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import headshot from "../assets/headshot-medium.jpg";
+import Container from '../components/Container.astro';
+---
+
+<section class="about-the-instructor">
+  <Container size="narrow">
+  
+    <h2><span>About the Instructor</span></h2>
+    
+    <div class="intro">   
+      <p>Tom has more than 20 years of professional experience as a pianist and educator, during which time he has performed thousands of gigs and taught many students. He started playing piano by ear at age 4 and pursued his passion to study classical, jazz, and popular music styles during his formative years. In 2005 he moved to NYC and completed his postgraduate training at the Juilliard School, earning his Masters of Music in Jazz Studies studying with the great Kenny Barron.</p>
+      <div class="instructor-image">
+        <Image
+          src={headshot}
+          alt="Photo of piano instructor"
+          class="headshot"
+        />
+      </div>
+    </div>
+
+    <p>Tom is a natural educator and loves sharing his knowledge with others. At Julliard he taught NYC public school students through an Educational Outreach Program. He taught Advanced Theory for Juilliard's Music Advancement Program on Saturdays. He was selected for a cultural exchange program, through which he traveled to work with students at universities in Costa Rica, Colombia, El Salvador, North Carolina, Utah, and Florida. He was on faculty for several years at SUNY Purchase summer jazz camp. He spent more than a decade teaching private students and group classes at Church Street School for Music and Art in Tribeca. Now with Brooklyn Piano Studio he continues his mission to bring the music to the people, making the joy of piano and music accessible to anyone who wants to learn.</p>
+
+  </Container>
+</section>
+
+<style>
+.about-the-instructor {
+  padding-block: 5rem;
+  background: var(--walnut);
+  --instructor-image-width: 200px;
+}
+
+h2,
+p {
+  color: var(--light-parchment);
+}
+
+p {
+  line-height: 1.6375;
+  margin-bottom: 1.58rem;
+  font-size: .975rem;
+  letter-spacing: .02rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+h2 span {
+  padding-bottom: .5rem;
+  border-bottom: .05em var(--gold) solid;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr var(--instructor-image-width);
+  gap: 1.3rem;
+}
+
+.instructor-image {
+  width: var(--instructor-image-width);
+  height: 100%;
+  position: relative;
+  top: 15px;
+  overflow: hidden;
+}
+
+.headshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: saturate(0.9) brightness(0.95);
+}
+</style>

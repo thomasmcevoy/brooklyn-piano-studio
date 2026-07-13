@@ -1,0 +1,75 @@
+---
+const { text, variant } = Astro.props;
+---
+
+<div >
+  <a href="/contact" role="button" class={`button ${variant}`}>
+    <span>{text}</span>
+  </a>
+</div>
+
+<style>
+.button {
+  padding: 1rem 2rem;
+  margin: 1.1rem;
+  border: none;
+}
+
+.button span {
+  position: relative;
+  font-family: "Gill Sans", sans-serif;
+}
+
+
+/* hero variant styles */
+.hero {
+  background-color: var(--maroon);
+}
+
+.hero:hover {
+  background-color: var(--bright-maroon);
+}
+
+.hero span {
+  top: 0.1em;
+  font-size: 1rem;
+}
+
+
+/* footer variant styles */
+.footer {
+  margin-top: 0;
+  margin-right: 0;
+  background-color: var(--muted-maroon);
+  /* opacity: .98; */
+}
+
+.footer:hover {
+  background-color: var(--footer-maroon-hover);
+}
+
+.footer span {
+  top: 0.15em;
+  font-size: .9rem;
+  letter-spacing: .125em;
+}
+
+
+/* contact variant styles */
+.contact {
+  background: var(--maroon);
+  color: var(--parchment);
+  border: 1px solid var(--maroon);
+  margin-inline: auto;
+}
+
+.contact:hover {
+  background: var(--bright-maroon);
+}
+
+.contact span {
+  top: 0.15em;
+  font-size: .9rem;
+  letter-spacing: .125em;
+}
+</style>

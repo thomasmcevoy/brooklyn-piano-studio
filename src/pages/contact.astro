@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout>
+  <section class="contact">
+    <Container size="narrow">
+
+      <div class="contact-intro">
+        <h2>Schedule your first lesson</h2>
+        <p>Or just say hi, we're happy to answer any questions you may have!</p>
+      </div>
+
+      <ContactForm/>
+    
+    </Container>
+  </section>
+</Layout>
+
+<style>
+.contact {
+  margin: 0;
+  padding-block: 9rem 4rem;
+  background: var(--dark-parchment-2);
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-intro * {
+  color: var(--brown-ink);
+}
+</style>

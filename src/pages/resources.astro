@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/Container.astro';
+---
+
+<Layout>
+  <section class="resources">
+    <Container size="narrow">
+
+      <div class="content">
+        <h2>Educational materials</h2>
+        <p>This is where you will find various educational resources provided for your reference. This section is under construction, stay tuned!</p>
+      </div>
+    
+    </Container>
+  </section>
+</Layout>
+
+<style>
+.resources {
+  margin: 0;
+  padding-block: 9rem 4rem;
+  background: var(--dark-parchment-2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+h2,
+p {
+  color: var(--brown-ink);
+}
+</style>

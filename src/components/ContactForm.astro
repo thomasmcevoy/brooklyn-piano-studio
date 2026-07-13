@@ -1,0 +1,75 @@
+---
+import Button from '../components/Button.astro';
+---
+
+<form action="https://formspree.io/f/mvzeolgl" method="post">
+  <label>
+    Name
+    <input
+      type="text"
+      name="name"
+      autocomplete="name"
+      required
+    />
+  </label>
+
+  <label>
+    Email
+    <input
+      type="email"
+      name="email"
+      autocomplete="email"
+      required
+    />
+  </label>
+
+  <label>
+    Message
+    <textarea
+      name="message"
+      rows="6"
+      required
+    ></textarea>
+  </label>
+
+  <div class="submit">
+    <Button text="SEND MESSAGE" variant="contact" />
+  </div>
+</form>
+
+<style>
+form {
+  display: grid;
+  gap: -.75rem;
+}
+
+label {
+  color: var(--form-label);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0;
+}
+
+input,
+textarea {
+  background: var(--parchment);
+  border-color: rgba(66, 54, 45, 0.2);
+  color: var(--brown-ink);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--maroon);
+  box-shadow: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  /* margin-top: 2rem; */
+}
+</style>

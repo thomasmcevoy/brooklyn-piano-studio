@@ -1,0 +1,73 @@
+---
+import Container from '../components/Container.astro';
+import Grid from '../components/Grid.astro';
+import Card from '../components/Card.astro';
+---
+
+<section class="services">
+  <Container size="wide">
+    <div class="cards">
+      <Grid columns="3" gap="3.5rem">
+
+        <Card>
+          <h3>Three ways to learn</h3>
+          <ul>
+            <li>
+              <h4>In Studio:</h4>
+              <p>Our studio is conveniently located between Carroll Gardens and Cobble Hill in South Brooklyn</p>
+            </li>
+            <li>
+              <h4>Online:</h4>
+              <p>Video lessons via Zoom or Facetime</p>
+            </li>
+            <li>
+              <h4>In Home:</h4>
+              <p>We'll come to you. Take lessons in the comfort of your own home</p>
+            </li>
+          </ul>
+        </Card>
+
+        <Card>
+          <h3>Learn the music you love</h3>
+          <ul>
+            <li>Jazz & Standards</li>
+            <li>Classical</li>
+            <li>Blues</li>
+            <li>Gospel</li>
+            <li>Broadway</li>
+            <li>Pop, Rock, R&B</li>
+            <li>Music from TV, Film, Video Games</li>
+          </ul>
+        </Card>
+          
+        <Card>
+          <h3>Build your skills</h3>
+          <ul>
+            <li>Music theory</li>
+            <li>How to learn by ear</li>
+            <li>Proper technique & injury prevention</li>
+            <li>Note reading & music notation</li>
+            <li>How to play in a band</li>
+            <li>Composition</li>
+          </ul>
+        </Card>
+        
+      </Grid>
+    </div>
+  </Container>
+</section>
+
+<style>
+.services {
+  padding-top: .5em;
+  background: var(--walnut);
+}
+
+.cards {
+  padding-block: 2rem;
+}
+
+.cards h4 {
+  margin-bottom: .25rem;
+}
+</style>
