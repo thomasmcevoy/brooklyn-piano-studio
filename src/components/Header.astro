@@ -8,7 +8,7 @@ import Wordmark from '../components/Wordmark.astro';
   <Container size="wide">
     <div class="header-inner">
       
-      <a href="/">
+      <a href="/" class="wordmark-container">
         <Wordmark text="Brooklyn Piano Studio" class="header-wordmark"/>
       </a>
     
@@ -38,18 +38,18 @@ header {
   padding-block: .375rem;
 }
 
+.wordmark-container {
+  font-size: 1.8rem;
+}
+
 @media (max-width: 700px) {
   .header-inner {
     flex-direction: column;
     padding-block: 0
   }
-}
-
-:global(.header-wordmark) {
-  color: var(--ink);
-  font-size: 1.8rem;
-  position: relative;
-  top: -.1rem;
+  .wordmark-container {
+    transform: translateY(.4em);
+  }
 }
 
 :global(header a) {
