@@ -1,26 +1,21 @@
 ---
 import Nav from '../components/HeaderNav.astro';
-import Grid from '../components/Grid.astro';
 import Container from '../components/Container.astro';
 import Wordmark from '../components/Wordmark.astro';
 ---
 
 <header>
-  <!-- <div class="header-inner"> -->
   <Container size="wide">
-    <Grid columns="2">
+    <div class="header-inner">
       
       <a href="/">
-        <!-- <div class="wordmark"> -->
-          <Wordmark text="Brooklyn Piano Studio" class="header-wordmark"/>
-        <!-- </div> -->
+        <Wordmark text="Brooklyn Piano Studio" class="header-wordmark"/>
       </a>
     
       <Nav/>
     
-    </Grid>
+    </div>
   </Container>
-  <!-- </div> -->
 </header>
 
 <style>
@@ -34,23 +29,26 @@ header {
   backdrop-filter: blur(15px);
   border-bottom: 1px solid rgb(255 255 255 / 0.15);
   box-shadow: 0 2px 8px rgba(66, 54, 45, 0.06);
-
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  margin: 0;
-  padding: .5rem 2rem;
+  padding-block: .375rem;
+}
+
+@media (max-width: 700px) {
+  .header-inner {
+    flex-direction: column;
+  }
 }
 
 :global(.header-wordmark) {
   color: var(--ink);
   font-size: 1.8rem;
-  position: relative;
-  top: .25rem;
+  /* position: relative;
+  top: -.05rem; */
 }
 
 :global(header a) {
