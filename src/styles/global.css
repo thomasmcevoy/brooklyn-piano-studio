@@ -76,6 +76,7 @@
   --section-padding-block: clamp(3rem, 8vw, 6rem);
   --section-padding-block-large: clamp(5rem, 10vw, 8rem);
   --section-padding-block-small: clamp(2rem, 6vw, 5rem);
+  --section-padding-block-xsmall: clamp(1.25rem, 4vw, 3rem);
 }
 
 .font-body {

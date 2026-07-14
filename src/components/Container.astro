@@ -8,7 +8,7 @@ const { size } = Astro.props;
 
 <style>
 .container {
-  width: min(100% - 5rem, var(--max-width));
+  width: min(100% - clamp(2rem, 8vw, 5rem), var(--max-width));  /* does px instead of rem give a smoother responsive experience? */
   margin-inline: auto;
 }
 
