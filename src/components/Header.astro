@@ -42,6 +42,12 @@ header {
   font-size: 1.8rem;
 }
 
+:global(header a) {
+  color: var(--ink);
+  text-decoration: none;
+  transform: translateY(.15em);  /* compensating for gill sans' high vertical placement */
+}
+
 @media (max-width: 700px) {
   .header-inner {
     flex-direction: column;
@@ -50,12 +56,8 @@ header {
   .wordmark-container {
     transform: translateY(.4em);
   }
+  :global(header a) {
+    transform: translateY(.3em);
+  }
 }
-
-:global(header a) {
-  color: var(--ink);
-  text-decoration: none;
-  transform: translateY(.15em);  /* compensating for gill sans' high vertical placement */
-}
-
 </style>
