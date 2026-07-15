@@ -13,17 +13,14 @@ import Button from '../../components/Button.astro';
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: rgb(194, 199, 208);
 }
 
 @media (max-width: 700px) {
   .cta {
     grid-column: 1 / -1;
-    margin-top: -.25rem;
-    margin-bottom: 1.5rem;
+    /* margin-top: -.25rem; */
+    margin-top: var(--section-padding-block-small);
   }
-  
-  /* .cta > p {
-    display: none;
-  } */
 }
 </style>
