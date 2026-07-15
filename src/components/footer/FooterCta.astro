@@ -2,25 +2,25 @@
 import Button from '../../components/Button.astro';
 ---
 
-<div class='cta'>
+<div class='footer-cta'>
   <p>Ready to get started?</p>
   <Button text="BOOK A LESSON" variant="footer"/>
 </div>
 
 <style>
-.cta {
+.footer-cta {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.cta p {
+.footer-cta p {
   color: var(--footer-text-bright)
 }
 
 @media (max-width: 700px) {
-  .cta {
+  .footer-cta {
     grid-column: 1 / -1;
     margin-top: var(--section-padding-block-small);
   }

@@ -40,12 +40,12 @@ header {
 
 .wordmark-container {
   font-size: 1.8rem;
+  transform: translateY(-.25rem);  /* fix wordmark vertical position  */
 }
 
 :global(header a) {
   color: var(--ink);
   text-decoration: none;
-  transform: translateY(.15rem);  /* compensating for gill sans' high vertical placement */
 }
 
 @media (max-width: 700px) {

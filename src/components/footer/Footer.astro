@@ -7,7 +7,6 @@ import Nav from './FooterNav.astro';
 import Cta from './FooterCta.astro';
 
 const { showCta } = Astro.props;
-const columns = showCta ? 3 : 2;
 ---
 
 <footer>
@@ -17,15 +16,13 @@ const columns = showCta ? 3 : 2;
       <Wordmark text="Brooklyn Piano Studio" class="footer-wordmark"/>
     </div>
 
-    <div class="footer-main">
-      <Grid columns={columns} variant="footer">
-        
-        <Blurb />
-        <Nav />
-        {showCta && <Cta />}
-        
-      </Grid>
-    </div>
+    <Grid numColumns={showCta ? 3 : 2} variant="footer" flexible>
+      
+      <Blurb />
+      <Nav />
+      {showCta && <Cta />}
+      
+    </Grid>
 
     <p class="copyright"><small>All content &copy; 2026 Brooklyn Piano Studio</small></p>
   </Container>
@@ -58,8 +55,9 @@ footer {
   letter-spacing: .1rem ;
 }
 
-.footer-main {
+:global(.grid.footer) {
   margin-top: 2rem;
+  justify-content: space-between;
 }
 
 @media (max-width: 700px) {
@@ -81,7 +79,7 @@ footer {
   :global(.grid.footer > .footer-cta) {
     grid-column: 1 / -1;
     grid-row: 2;
-    justify-self: center;
+    /* justify-self: center; */
   }
 }
 

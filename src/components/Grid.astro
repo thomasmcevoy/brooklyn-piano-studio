@@ -1,9 +1,10 @@
 ---
 const {
-  columns,
+  numColumns,
   gap,
   alignItems,
   variant = "",
+  flexible = false,
   class: className = ""
 } = Astro.props;
 ---
@@ -11,9 +12,10 @@ const {
 <div
   class={`grid ${variant} ${className}`}
   style={`
-    --columns: ${columns};
+    --num-columns: ${numColumns};
     --gap: ${gap};
-    --align-items: ${alignItems}
+    --align-items: ${alignItems};
+    --column-type: ${flexible ? 'auto' : '1fr'}
   `}
 >
   <slot />
@@ -22,7 +24,7 @@ const {
 <style>
   .grid {
     display: grid;
-    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-columns: repeat(var(--num-columns), var(--column-type));
     gap: var(--gap);
     align-items: var(--align-items);
   }
