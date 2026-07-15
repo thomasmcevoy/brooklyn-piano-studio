@@ -16,33 +16,33 @@ const { showCta } = Astro.props;
     </div>
 
     <div class="footer-main">
-      <Grid columns={showCta ? 3 : 2} alignItems="start">
+      <Grid variant="footer">
         
-        <div class={`blurb ${!showCta ? "centered" : ""}`}>
+        <div class={`blurb ${!showCta ? "align-left" : ""}`}>
           <p>Private music instruction by appt.</p>
           <p>Serving greater NYC since 2005</p>
           <p>Brooklyn, NY 11231</p>
+          <p class="copyright"><small>&copy; 2026 Brooklyn Piano Studio</small></p>
         </div>
         
+        <Nav />
+
         {showCta && (
-          <div class='cta-container'>
+          <div class='footer-cta'>
+            <p>Ready to get started?</p>
             <Button text="BOOK A LESSON" variant="footer"/>
           </div>
         )}
         
-        <Nav/>
-
       </Grid>
     </div>
-
-    <p class="copyright">All content &copy; 2026 Brooklyn Piano Studio</p>
   </Container>
 </footer>
 
 <style>
 footer {
-  padding-top: var(--section-padding-block);
-  padding-bottom: var(--section-padding-block-xsmall);
+  padding-block: var(--section-padding-block);
+  padding-bottom: var(--section-padding-block-small);
 }
 
 .wordmark-container {
@@ -62,9 +62,18 @@ footer {
   padding-block: 1rem;
 }
 
+
+/*  blurb  */
+
 .blurb {
   text-align: center;
   width: fit-content;
+}
+
+.blurb.align-left {
+  text-align: left;
+  width: fit-content;
+  justify-self: center;
 }
 
 .blurb p {
@@ -77,21 +86,33 @@ footer {
   margin-top: 0;
 }
 
-.cta-container {
+
+/*  footer cta  */
+
+.footer-cta {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-.blurb.centered {
-  text-align: center;
-  width: fit-content;
-  justify-self: center;;
+@media (max-width: 700px) {
+  .footer-cta {
+    grid-column: 1 / -1;
+  }
+  
+  .footer-cta > p {
+    display: none;
+  }
 }
+
+
+/*  copyright  */
 
 .copyright {
   margin-top: var(--section-padding-block-small);
   text-align: center;
-  font-size: 0.75rem;
+  /* font-size: 0.75rem; */
   color: var(--footer-text-3);
   opacity: 0.7;
 }

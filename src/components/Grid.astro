@@ -3,16 +3,17 @@ const {
   columns,
   gap,
   alignItems,
+  variant = "",
   class: className = ""
 } = Astro.props;
 ---
 
 <div
-  class={`grid ${className}`}
+  class={`grid ${variant} ${className}`}
   style={`
     --columns: ${columns};
     --gap: ${gap};
-    --align-tems: ${alignItems}
+    --align-items: ${alignItems}
   `}
 >
   <slot />
@@ -26,9 +27,33 @@ const {
     align-items: var(--align-items);
   }
 
+  .grid.footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   @media (max-width: 700px) {
     .grid {
       grid-template-columns: 1fr;
+    }
+
+    .grid.footer {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid.footer > :global(.blurb) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .grid.footer > :global(nav) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .grid.footer > :global(.footer-cta) {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      justify-self: center;
     }
   }
 </style>
