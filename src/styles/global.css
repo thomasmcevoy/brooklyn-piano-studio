@@ -63,6 +63,7 @@
   --footer-maroon-hover: #742437;
   --gold: #6a553b;
   --form-label: #756E67;
+  --site-background-color: rgb(19, 22.5, 30.5);
 
   /* bg-[#D8CEBC] text-[#4A4038] */
   --pico-font-family: "Gill Sans Book", sans-serif;
@@ -79,6 +80,10 @@
 .font-body {
   font-family: "Gill Sans Book", sans-serif;
   font-weight: 400
+}
+
+html {
+  background: var(--site-background-color);
 }
 
 h1,
