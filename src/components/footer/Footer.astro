@@ -7,6 +7,7 @@ import Nav from './FooterNav.astro';
 import Cta from './FooterCta.astro';
 
 const { showCta } = Astro.props;
+const columns = showCta ? 3 : 2;
 ---
 
 <footer>
@@ -17,7 +18,7 @@ const { showCta } = Astro.props;
     </div>
 
     <div class="footer-main">
-      <Grid variant="footer">
+      <Grid columns={columns} variant="footer">
         
         <Blurb />
         <Nav />
@@ -53,10 +54,10 @@ footer {
   padding-block: 1rem;
 }
 
-:global(.grid.footer) {
+/* :global(.grid.footer) {
   grid-template-columns: 1fr 1fr 1fr;
 
-}
+} */
 
 @media (max-width: 700px) {
   :global(.grid.footer) {
