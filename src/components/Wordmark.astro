@@ -4,7 +4,7 @@ const { text, class: className = "" } = Astro.props;
 const words = text.split(" ");
 ---
 
-<span class={`${className}`}>
+<span class={`wordmark ${className}`}>
   {words.map((word, index) => (
     <>
       <span class="word">
@@ -18,7 +18,8 @@ const words = text.split(" ");
 <style>
 .wordmark {
   display: inline-block;
-  line-height: 1;
+  line-height: 2.5;
+  height: 1.8rem;
 }
 
 .initial {
