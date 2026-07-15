@@ -16,34 +16,44 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  width: max-content;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
 }
 
 nav li {
-  padding: 0;
-  margin: .25rem 0;
-  text-align: left;
+  padding: .25rem;
 }
 
 nav a {
   display: block;
-  text-align: left;
   padding-block: .25rem;
+  
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-decoration: none;
   color: var(--footer-text-2);
-
   transition: opacity 150ms ease;
 }
 
 nav a:hover {
   opacity: 0.7;
 }
+
+/*  make footer nav text flush right  */
+/* @media (max-width: 700px) {
+  nav {
+    justify-self: end;
+  }
+
+  nav ul {
+    align-items: flex-end;
+  }
+
+  nav a {
+    text-align: right;
+  }
+} */
 </style>

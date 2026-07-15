@@ -1,0 +1,28 @@
+---
+import Button from '../../components/Button.astro';
+---
+
+<div class='cta'>
+  <p>Ready to get started?</p>
+  <Button text="BOOK A LESSON" variant="footer"/>
+</div>
+
+<style>
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .cta {
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+  }
+  
+  .cta > p {
+    display: none;
+  }
+}
+</style>

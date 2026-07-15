@@ -1,0 +1,81 @@
+---
+import Container from '../../components/Container.astro';
+import Wordmark from '../../components/Wordmark.astro';
+import Grid from '../../components/Grid.astro';
+import Blurb from './FooterBlurb.astro';
+import Nav from './FooterNav.astro';
+import Cta from './FooterCta.astro';
+
+const { showCta } = Astro.props;
+---
+
+<footer>
+  <Container size="medium-flexible">
+    
+    <div class="wordmark-container">
+      <Wordmark text="Brooklyn Piano Studio" class="footer-wordmark"/>
+    </div>
+
+    <div class="footer-main">
+      <Grid variant="footer">
+        
+        <Blurb />
+        <Nav />
+        {showCta && <Cta />}
+        
+      </Grid>
+    </div>
+  </Container>
+</footer>
+
+<style>
+footer {
+  padding-top: var(--section-padding-block);
+  padding-bottom: var(--section-padding-block-small);
+}
+
+.wordmark-container {
+  padding-bottom: .375rem;
+  border-bottom: 1px solid rgba(232, 221, 207, 0.2);
+  text-align: center;
+}
+
+:global(.footer-wordmark) {
+  color: var(--footer-text);
+  font-size: 1.5rem;
+  letter-spacing: .1rem ;
+}
+
+.footer-main {
+  margin-top: 1.1rem;
+  padding-block: 1rem;
+}
+
+:global(.grid.footer) {
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+@media (max-width: 700px) {
+  :global(.grid.footer) {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  :global(.grid.footer > .blurb) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  :global(.grid.footer > nav) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  :global(.grid.footer > .footer-cta) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+  }
+}
+</style>
