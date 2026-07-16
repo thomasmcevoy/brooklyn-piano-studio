@@ -1,15 +1,25 @@
 ---
-const { text, variant } = Astro.props;
+const {
+  text,
+  variant,
+  href,
+  type
+} = Astro.props;
 ---
 
-<div >
-  <a href="/contact" role="button" class={`button ${variant}`}>
+{href ? (
+    <a href={href} class={`button ${variant}`}>
+      <span>{text}</span>
+    </a>
+) : (
+  <button type={type ?? "button"} class={`button ${variant}`}>
     <span>{text}</span>
-  </a>
-</div>
+  </button>
+)}
 
 <style>
 .button {
+  display: inline-block;
   padding: 1rem 2rem;
   margin: 1.1rem;
   border: none;
@@ -23,6 +33,7 @@ const { text, variant } = Astro.props;
 
 /* hero variant styles */
 .hero {
+  color: var(--parchment);  /*  hero component text color  */
   background-color: var(--maroon);
 }
 
@@ -57,6 +68,10 @@ const { text, variant } = Astro.props;
 
 
 /* contact variant styles */
+.contact.button {
+  width: fit-content;
+}
+
 .contact {
   background: var(--maroon);
   color: var(--parchment);
