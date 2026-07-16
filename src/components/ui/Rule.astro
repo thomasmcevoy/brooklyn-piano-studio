@@ -1,0 +1,39 @@
+---
+const { variant } = Astro.props;
+---
+
+<div class={`rule ${variant}`} aria-hidden="true"></div>
+
+<style>
+.rule {
+  margin-inline: auto;
+  width: 75%;
+}
+
+@media (max-width: 500px) {
+  .rule {
+    width: calc(75% + (500px - 100vw) * 0.25);
+  }
+}
+
+/* Under section headings */
+.title-walnut {
+  margin-top: .375rem 0;
+  height: .5px;
+  background: var(--gold);
+}
+
+/* Under the footer wordmark */
+.wordmark {
+  margin-top: .375rem 0;
+  height: 1px;
+  background: rgba(232, 221, 207, 0.2);
+}
+
+/* Standalone decorative separator */
+.spacer {
+  height: 1px;
+  margin-bottom: var(--section-spacing-lg);
+  background: rgba(60, 45, 30, 0.18);
+}
+</style>
