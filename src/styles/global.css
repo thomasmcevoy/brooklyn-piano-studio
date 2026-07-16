@@ -70,11 +70,10 @@
 
 
   /* section spacing */
-  /* ---------------------------------------------------- */
-  --section-padding-block: clamp(3rem, 8vw, 6rem);
-  --section-padding-block-large: clamp(5rem, 10vw, 8rem);
-  --section-padding-block-small: clamp(2rem, 6vw, 5rem);
-  --section-padding-block-xsmall: clamp(1.25rem, 4vw, 3rem);
+  --section-spacing-xs: clamp(1.25rem, 4vw, 3rem);
+  --section-spacing-sm: clamp(2rem, 6vw, 5rem);
+  --section-spacing-md: clamp(3rem, 8vw, 6rem);
+  --section-spacing-lg: clamp(5rem, 10vw, 8rem);
 }
 
 .font-body {
@@ -108,5 +107,9 @@ a {
 /* Override Pico default header styles; site styles in Header.astro and Nav.astro */
 body > header {
   padding-block: 0;
+}
 
+/* Override Pico default margin-bottom on .section */
+main .section {
+  margin-bottom: 0;
 }

@@ -8,21 +8,16 @@ import headshot from "../../assets/headshot-medium.jpg";
   <Container size="narrow">
     
     <h2><span>About the Instructor</span></h2>
-
-    <div class="intro">   
       
-      <div class="instructor-image">
-        <Image
-          src={headshot}
-          alt="Photo of piano instructor"
-          class="headshot"
-        />
-      </div>
-      
-      <p>Tom has more than 20 years of professional experience as a pianist and educator, during which time he has performed thousands of gigs and taught many students. He started playing piano by ear at age 4 and pursued his passion to study classical, jazz, and popular music styles during his formative years. In 2005 he moved to NYC and completed his postgraduate training at the Juilliard School, earning his Masters of Music in Jazz Studies studying with the great Kenny Barron.</p>
-      
+    <div class="instructor-image">
+      <Image
+        src={headshot}
+        alt="Photo of piano instructor"
+        class="headshot"
+      />
     </div>
-
+      
+    <p>Tom has more than 20 years of professional experience as a pianist and educator, during which time he has performed thousands of gigs and taught many students. He started playing piano by ear at age 4 and pursued his passion to study classical, jazz, and popular music styles during his formative years. In 2005 he moved to NYC and completed his postgraduate training at the Juilliard School, earning his Masters of Music in Jazz Studies studying with the great Kenny Barron.</p>
     <p>Tom is a natural educator and loves sharing his knowledge with others. At Julliard he taught NYC public school students through an Educational Outreach Program. He taught Advanced Theory for Juilliard's Music Advancement Program on Saturdays. He was selected for a cultural exchange program, through which he traveled to work with students at universities in Costa Rica, Colombia, El Salvador, North Carolina, Utah, and Florida. He was on faculty for several years at SUNY Purchase summer jazz camp. He spent more than a decade teaching private students and group classes at Church Street School for Music and Art in Tribeca. Now with Brooklyn Piano Studio he continues his mission to bring the music to the people, making the joy of piano and music accessible to anyone who wants to learn.</p>
 
   </Container>
@@ -30,33 +25,15 @@ import headshot from "../../assets/headshot-medium.jpg";
 
 <style>
 .about-the-instructor {
-  padding-block: 5rem;
+  padding-block: var(--section-spacing-md);
   background: var(--walnut);
-  --instructor-image-width: 200px;
+  display: flow-root;
 }
-
-h2,
-p {
-  color: var(--light-parchment);
-}
-
-p {
-  font-size: clamp(1rem, calc(1.2rem - .5vw), 1.0625rem);
-  line-height: 1.55;
-  letter-spacing: .01rem;
-  margin-bottom: 1.58rem;
-}
-
-/* @media (min-width: 700px) {
-  p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-} */
 
 h2 {
   text-align: center;
-  margin-bottom: 1.5em;
+  margin-bottom: 2rem;
+  color: var(--light-parchment);
 }
 
 h2 span {
@@ -64,8 +41,19 @@ h2 span {
   border-bottom: .05em var(--gold) solid;
 }
 
-.intro {
-  display: flow-root;
+p {  
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  
+  /* Larger mobile reading size, gradually settles as Pico root size grows */
+  font-size: clamp(1rem, calc(1.2rem - .5vw), 1.0625rem);
+  line-height: 1.55;
+  letter-spacing: .01rem;
+  color: var(--light-parchment);
+}
+
+.about-the-instructor p:last-child {
+  margin-bottom: 0;
 }
 
 .instructor-image {
