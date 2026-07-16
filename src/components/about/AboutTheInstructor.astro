@@ -41,11 +41,18 @@ p {
 }
 
 p {
-  font-size: 1.0625rem;
+  font-size: clamp(1rem, calc(1.2rem - .5vw), 1.0625rem);
   line-height: 1.55;
   letter-spacing: .01rem;
   margin-bottom: 1.58rem;
 }
+
+/* @media (min-width: 700px) {
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+} */
 
 h2 {
   text-align: center;
