@@ -58,18 +58,20 @@ h2 span {
 }
 
 .intro {
-  display: block;
+  display: flow-root;
 }
 
 .instructor-image {
   float: right;
-  width: var(--instructor-image-width);
-  margin-left: 1.3rem;
+  width: 10.4em;
+  margin-left: 1.4rem;
   margin-bottom: .75rem;
-  /* height: 100%; */
-  /* position: relative;
-  top: 15px;
-  overflow: hidden; */
+}
+
+@media (max-width: 700px) {
+  .instructor-image {
+    width: 45%;
+  }
 }
 
 .headshot {
