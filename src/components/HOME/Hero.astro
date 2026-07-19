@@ -57,6 +57,14 @@ import heroImage from "../../assets/hero2.jpg";
   z-index: 2;
 }
 
+.hero-title-wrap {
+  visibility: hidden;
+}
+
+.hero-title-wrap.ready {
+  visibility: visible;
+}
+
 .hero-title {
   position: absolute;
   inset-inline: 0;
@@ -114,6 +122,8 @@ function buildTrail() {
 
     titleWrap.appendChild(echo);
   }
+
+  titleWrap.classList.add("ready");
 }
 
 buildTrail();
