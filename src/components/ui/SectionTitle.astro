@@ -1,0 +1,19 @@
+---
+import Rule from "./Rule.astro";
+---
+
+<div class="section-title">
+  <h2><slot /></h2>
+  <Rule variant="section-title" />
+</div>
+
+<style>
+.section-title {
+  text-align: center;
+  margin-bottom: var(--section-spacing-sm);
+}
+
+.section-title h2 {
+  margin-bottom: .375rem;
+}
+</style>

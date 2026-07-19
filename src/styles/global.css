@@ -37,8 +37,7 @@
 }
 
 :root {
-  /* text colors */
-  /* ---------------------------------------------------- */
+  /*  COLORS  */
   /* --light-parchment: #e8ddcf; */
   /* --light-parchment-2: #e8ddcff4; */
   --light-parchment: #dcd2c5;
@@ -85,12 +84,18 @@ html {
   background: var(--site-background-color);
 }
 
+
+/*  TYPOGRAPHICAL STYLES  */
 h1,
 h2,
 h3 {
   font-family: "Gill Sans", sans-serif;
   font-weight: 700;
 }
+
+/* h4 {
+  margin-bottom: .65rem;
+} */
 
 a {
   /* color: var(--maroon); */
@@ -99,17 +104,41 @@ a {
   
 }
 
-/* Override Pico container sizing; site uses Container.astro width system */
+.prose {
+  font-size: clamp(1rem, calc(1.2rem - .5vw), 1.0625rem);
+  line-height: 1.55;
+  letter-spacing: .01rem;
+}
+
+p.prose {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.copy {
+  font-size: 1.05rem;
+  line-height: 1.725;
+  letter-spacing: .0125rem;
+}
+
+
+/* ---------- PICO OVERRIDES ---------- */
+
+ul li {
+  list-style-type: none;
+}
+
+/*  Override Pico container sizing; site uses Container.astro width system */
 .container {
   max-width: none;
 }
 
-/* Override Pico default header styles; site styles in Header.astro and Nav.astro */
+/*  Override Pico default header styles; site styles in Header.astro and Nav.astro */
 body > header {
   padding-block: 0;
 }
 
-/* Override Pico default margin-bottom on .section */
+/*  Override Pico default margin-bottom on .section */
 main .section {
   margin-bottom: 0;
 }

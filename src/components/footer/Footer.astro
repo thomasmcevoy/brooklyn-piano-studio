@@ -2,9 +2,9 @@
 import Container from '../UI/Container.astro';
 import Wordmark from '../UI/Wordmark.astro';
 import Grid from '../UI/Grid.astro';
-import Blurb from './FooterBlurb.astro';
+import Cta from '../UI/Cta.astro';
 import Nav from './FooterNav.astro';
-import Cta from './FooterCta.astro';
+import Blurb from './FooterBlurb.astro';
 
 const { showCta } = Astro.props;
 ---
@@ -13,14 +13,25 @@ const { showCta } = Astro.props;
   <Container size="medium-flexible">
     
     <div class="wordmark-container">
-      <Wordmark text="Brooklyn Piano Studio" class="footer-wordmark"/>
+      <Wordmark
+        text="Brooklyn Piano Studio"
+        class="footer-wordmark"
+      />
     </div>
 
-    <Grid numColumns={showCta ? 3 : 2} variant="footer" flexible>
+    <Grid
+      variant="footer"
+      mode={showCta ? "expanded" : "compact"}
+    >
       
       <Blurb />
       <Nav />
-      {showCta && <Cta />}
+      {showCta && <Cta 
+        variant="footer"
+        text="Ready to get started?"
+        buttonText="BOOK A LESSON"
+        href="/contact"
+      />}
       
     </Grid>
 

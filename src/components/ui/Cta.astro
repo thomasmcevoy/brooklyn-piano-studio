@@ -1,0 +1,65 @@
+---
+import Button from './Button.astro';
+
+const {
+  variant = "footer",
+  text,
+  buttonText,
+  href
+} = Astro.props;
+---
+
+<div class={`cta cta-${variant}`}>
+  <p>{text}</p>
+  <Button 
+    href={href} 
+    text={buttonText} 
+    variant={variant}
+  />
+</div>
+
+<style>
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* --------------- Hero --------------- */
+.cta-hero {
+  position: absolute;
+  left: 50%;
+  bottom: 30vh;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+}
+
+.cta-hero p {
+  font-style: italic;
+  color: var(--parchment);
+  text-wrap: balance;
+}
+
+/* --------------- Footer --------------- */
+.cta-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-footer p {
+  color: var(--footer-text-bright)
+}
+
+@media (max-width: 700px) {
+  .cta-footer {
+    grid-column: 1 / -1;
+    margin-top: var(--section-spacing-sm);
+  }
+}
+</style>

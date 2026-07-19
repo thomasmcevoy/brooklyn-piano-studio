@@ -1,0 +1,87 @@
+---
+const { class: className = "" } = Astro.props;
+---
+
+<article class={`panel ${className}`}>
+  <slot />
+</article>
+
+<style is:global>
+.panel {
+  background: inherit;
+  padding: .75rem 0;
+  box-shadow: none;
+}
+
+@media (max-width: 700px) {
+  .panel {
+    width: min(100%, 16rem);
+    min-width: 0;
+  }
+}
+
+.panel p,
+.panel h3,
+.panel li {
+  color: var(--parchment);
+}
+
+.panel h3 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: .25em 0;
+  margin-bottom: 1.25em;
+  font-size: 1.2rem;
+  letter-spacing: .05em;
+}
+
+.panel h3::after {
+  content: "";
+  position: absolute;
+
+  left: -1rem;
+  right: -1rem;
+
+  bottom: 0;
+  height: .175rem;
+
+  background: var(--gold);
+}
+
+.panel h4 {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--extra-dark-parchment);
+}
+
+.panel ul {
+  padding-inline-start: 0;
+}
+
+
+/* ---------- Decorated list items ---------- */
+.panel ul.decorated {
+  list-style: none;
+  padding: 0;
+}
+
+.panel ul.decorated li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: .75rem;
+}
+
+.panel ul.decorated li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .55em;
+
+  width: .3rem;
+  height: .3rem;
+
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+</style>

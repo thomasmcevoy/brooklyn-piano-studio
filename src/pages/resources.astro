@@ -1,18 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Container from '../components/ui/Container.astro';
+import SectionTitle from '../components/UI/SectionTitle.astro';
+import Container from '../components/UI/Container.astro';
 ---
 
 <Layout>
   <section class="resources">
-    <Container size="narrow">
-
-      <div class="content">
-        <h2>Educational materials</h2>
-        <p>This is where you will find various educational resources provided for your reference. This section is under construction, stay tuned!</p>
-      </div>
     
+    <SectionTitle class="title">Educational materials</SectionTitle>
+
+    <Container size="narrow">
+      <p>This is where you will find various educational resources provided for your reference. This section is under construction, stay tuned!</p>
     </Container>
+
   </section>
 </Layout>
 
@@ -29,7 +29,8 @@ h2 {
 }
 
 h2,
-p {
+p,
+title {
   color: var(--brown-ink);
 }
 </style>

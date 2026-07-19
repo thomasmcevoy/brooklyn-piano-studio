@@ -1,73 +1,77 @@
 ---
 import Container from '../UI/Container.astro';
 import Grid from '../UI/Grid.astro';
-import Card from '../UI/Card.astro';
+import Panel from '../UI/Panel.astro';
 ---
 
 <section class="services">
   <Container size="wide">
-    <div class="cards">
-      <Grid numColumns="3" gap="3.5rem">
+    <Grid variant="panels">
 
-        <Card>
-          <h3>Three ways to learn</h3>
-          <ul>
-            <li>
-              <h4>In Studio:</h4>
-              <p>Our studio is conveniently located between Carroll Gardens and Cobble Hill in South Brooklyn</p>
-            </li>
-            <li>
-              <h4>Online:</h4>
-              <p>Video lessons via Zoom or Facetime</p>
-            </li>
-            <li>
-              <h4>In Home:</h4>
-              <p>We'll come to you. Take lessons in the comfort of your own home</p>
-            </li>
-          </ul>
-        </Card>
+      <Panel>
+        <h3>Three ways to learn</h3>
+        <ul class="three-ways">
+          <li>
+            <h4>In Studio.</h4>
+            <p class="copy">Our studio is conveniently located between Carroll Gardens and Cobble Hill in South Brooklyn</p>
+          </li>
+          <li>
+            <h4>Online.</h4>
+            <p class="copy">Video lessons via Zoom or Facetime</p>
+          </li>
+          <li>
+            <h4>In Home.</h4>
+            <p class="copy">We'll come to you, take lessons in the comfort of your own home</p>
+          </li>
+        </ul>
+      </Panel>
 
-        <Card>
-          <h3>Learn the music you love</h3>
-          <ul>
-            <li>Jazz & Standards</li>
-            <li>Classical</li>
-            <li>Blues</li>
-            <li>Gospel</li>
-            <li>Broadway</li>
-            <li>Pop, Rock, R&B</li>
-            <li>Music from TV, Film, Video Games</li>
-          </ul>
-        </Card>
-          
-        <Card>
-          <h3>Build your skills</h3>
-          <ul>
-            <li>Music theory</li>
-            <li>How to learn by ear</li>
-            <li>Proper technique & injury prevention</li>
-            <li>Note reading & music notation</li>
-            <li>How to play in a band</li>
-            <li>Composition</li>
-          </ul>
-        </Card>
+      <Panel>
+        <h3>Learn music you love</h3>
+        <ul class="decorated">
+          <li>Jazz & Standards</li>
+          <li>Classical</li>
+          <li>Blues</li>
+          <li>Gospel</li>
+          <li>Broadway</li>
+          <li>Pop, Rock, R&B</li>
+          <li>Music from TV, Film, Video Games</li>
+        </ul>
+      </Panel>
         
-      </Grid>
-    </div>
+      <Panel>
+        <h3>Build your skills</h3>
+        <ul class="decorated">
+          <li>Music theory</li>
+          <li>How to learn by ear</li>
+          <li>Note reading & music notation</li>
+          <li>How to play in a band</li>
+          <li>Composition</li>
+          <li>Proper technique & injury prevention</li>
+        </ul>
+      </Panel>
+      
+    </Grid>
   </Container>
 </section>
 
 <style>
 .services {
-  padding-top: .5em;
+  padding-block: var(--section-spacing-md);
   background: var(--walnut);
 }
 
-.cards {
-  padding-block: 2rem;
+.services h4 {
+  display: inline;
+  margin-right: .7rem;
 }
 
-.cards h4 {
-  margin-bottom: .25rem;
+.services p {
+  display: inline;
+  padding-bottom: 1.5rem;
+}
+
+ul.three-ways li {
+  margin-bottom: 1.25rem;
 }
 </style>

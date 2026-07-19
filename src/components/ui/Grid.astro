@@ -1,37 +1,76 @@
 ---
 const {
-  numColumns,
-  gap,
-  alignItems,
   variant = "",
-  flexible = false,
+  mode = "",
   class: className = ""
 } = Astro.props;
 ---
 
-<div
-  class={`grid ${variant} ${className}`}
-  style={`
-    --num-columns: ${numColumns};
-    --gap: ${gap};
-    --align-items: ${alignItems};
-    --column-type: ${flexible ? 'auto' : '1fr'}
-  `}
->
+<div class={`grid ${variant} ${mode} ${className}`}>
   <slot />
 </div>
 
 <style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(var(--num-columns), var(--column-type));
-    gap: var(--gap);
-    align-items: var(--align-items);
+.grid {
+  display: grid;
+}
+
+
+/* ---------- Panels ---------- */
+
+.grid.panels {
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3.5rem;
+  row-gap: 3.5rem;
+}
+
+@media (max-width: 700px) {
+  .grid.panels {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 1.5rem;
+  }
+}
+
+
+/* ---------- Split ---------- */
+
+.grid.split {
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.5rem;
+  row-gap: 3rem;
+}
+
+@media (max-width: 700px) {
+  .grid.split {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- Footer ---------- */
+.grid.footer {
+  column-gap: 3rem;
+  justify-content: space-between;
+}
+
+.grid.footer.compact {
+  grid-template-columns: repeat(2, auto);
+}
+
+.grid.footer.expanded {
+  grid-template-columns: repeat(3, auto);
+}
+
+@media (max-width:700px) {
+  .grid.footer.compact,
+  .grid.footer.expanded {
+    grid-template-columns: repeat(2, auto);
+    row-gap: 2rem;
   }
 
-  @media (max-width: 700px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
+  .grid.footer.expanded > :last-child {
+    grid-column: 1 / -1;
   }
+}
 </style>
