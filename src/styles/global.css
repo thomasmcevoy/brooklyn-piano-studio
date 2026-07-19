@@ -138,7 +138,7 @@ body > header {
   padding-block: 0;
 }
 
-/*  Override Pico default margin-bottom on .section */
-main .section {
+/*  Override Pico default margin-bottom on section elements */
+section {
   margin-bottom: 0;
 }
