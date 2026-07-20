@@ -55,9 +55,6 @@ import heroImage from "../../assets/hero2.jpg";
   left: 0;
   width: 100%;
   z-index: 2;
-}
-
-.hero-title-wrap {
   visibility: hidden;
 }
 
@@ -87,7 +84,6 @@ function buildTrail() {
 
   if (!titleWrap || !title || !cta) return;
 
-  // remove previous echoes
   titleWrap.querySelectorAll(".echo").forEach(el => el.remove());
 
   const hero = titleWrap.closest(".hero");
@@ -97,13 +93,11 @@ function buildTrail() {
   const heroRect = hero.getBoundingClientRect();
   const ctaRect = cta.getBoundingClientRect();
 
-  // position the real title directly above the CTA
   const titleHeight = title.getBoundingClientRect().height;
   const gap = 40;
 
-  titleWrap.style.top = `${ ctaRect.top - heroRect.top - titleHeight - gap }px`;
+  titleWrap.style.top = `${ctaRect.top - heroRect.top - titleHeight - gap}px`;
 
-  // calculate how far upward we can extend
   const titleRect = title.getBoundingClientRect();
   const available = titleRect.top - heroRect.top;
   const spacing = titleHeight * 0.4;
@@ -117,8 +111,7 @@ function buildTrail() {
     echo.style.transform = `translateY(${-i * spacing}px)`;
 
     const depth = i / count;
-
-    echo.style.filter = `blur(${1.5 + depth * 1}px)`;
+    echo.style.filter = `blur(${1.5 + depth}px)`;
 
     titleWrap.appendChild(echo);
   }
@@ -126,7 +119,17 @@ function buildTrail() {
   titleWrap.classList.add("ready");
 }
 
-buildTrail();
+async function initTrail() {
+  await document.fonts.ready;
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      buildTrail();
+    });
+  });
+}
+
+initTrail();
 
 window.addEventListener("resize", buildTrail);
 </script>
