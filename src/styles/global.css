@@ -61,6 +61,10 @@
   --muted-maroon: #5A3038;
   --footer-maroon-hover: #742437;
   --gold: #6a553b;
+  --bright-gold: #7E684A;
+  --bright-gold-hover: #927B5A;
+  --antique-gold: #B8A16C;
+  --antique-gold-hover: #C5AF7A;
   --form-label: #756E67;
   --site-background-color: rgb(19, 22.5, 30.5);
 
@@ -97,11 +101,10 @@ h3 {
   margin-bottom: .65rem;
 } */
 
-a {
-  /* color: var(--maroon); */
-  text-decoration: none;
-  /* border-bottom: 1px solid var(--maroon); */
-  
+p a {
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: .075em;
 }
 
 .prose {

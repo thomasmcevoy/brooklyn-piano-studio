@@ -8,9 +8,9 @@ const {
 ---
 
 {href ? (
-    <a href={href} class={`button ${variant}`}>
-      <span>{text}</span>
-    </a>
+  <a href={href} class={`button ${variant}`}>
+    <span>{text}</span>
+  </a>
 ) : (
   <button type={type ?? "button"} class={`button ${variant}`}>
     <span>{text}</span>
@@ -23,6 +23,10 @@ const {
   padding: 1rem 2rem;
   margin: 1.1rem;
   border: none;
+}
+
+a.button {
+  text-decoration: none;
 }
 
 .button span {
