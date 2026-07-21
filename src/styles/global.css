@@ -104,7 +104,7 @@ h3 {
 p a {
   text-decoration: underline;
   text-underline-offset: 0.35em;
-  text-decoration-thickness: .07em;
+  text-decoration-thickness: .055em;
 }
 
 .prose {
