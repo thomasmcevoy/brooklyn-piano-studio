@@ -4,7 +4,7 @@ import Grid from '../UI/Grid.astro';
 import Panel from '../UI/Panel.astro';
 ---
 
-<section class="services">
+<div class="overview">
   <Container size="wide">
     <Grid variant="panels">
 
@@ -53,21 +53,21 @@ import Panel from '../UI/Panel.astro';
       
     </Grid>
   </Container>
-</section>
+</div>
 
 <style>
-.services {
-  padding-top: var(--section-spacing-md);
-  padding-bottom: var(--section-spacing-xs);
+.overview {
+  padding-top: var(--section-spacing-lg);
+  padding-bottom: var(--section-spacing-md);
   background: var(--walnut);
 }
 
-.services h4 {
+.overview h4 {
   display: inline;
   margin-right: .7rem;
 }
 
-.services p {
+.overview p {
   display: inline;
   padding-bottom: 1.5rem;
 }

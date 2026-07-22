@@ -5,34 +5,29 @@ import Container from '../UI/Container.astro';
 import Grid from '../UI/Grid.astro';
 ---
 
-<section class="rates-intro">
+<div class="rates-intro">
   <Container size="wide">
+    <Grid variant="split">
+    
+      <div class="rates-intro-content">
+        <h2>Rates & Lesson Options</h2>
+        <p class="prose">Every student has different goals, schedules, and experience levels, so lessons are offered in a variety of formats. Whether you're looking for an occasional refresher or weekly private instruction, you'll find an option designed to fit your needs.</p>
+        <p class="prose">If you're unsure which format is the best fit, feel free to <a href="/contact/">reach out</a>. We're always happy to discuss your goals and recommend a lesson plan that's right for you.</p>
+      </div>
 
-  <Grid 
-    numColumns="2"
-    gap="2.5rem"
-    alignItems="center"
-  >
-  
-    <div class="rates-intro-content">
-      <h2>Rates & Lesson Options</h2>
-      <p class="prose">Every student has different goals, schedules, and experience levels, so lessons are offered in a variety of formats. Whether you're looking for an occasional refresher or weekly private instruction, you'll find an option designed to fit your needs.</p>
-      <p class="prose">If you're unsure which format is the best fit, feel free to <a href="/contact/">reach out</a>. We're always happy to discuss your goals and recommend a lesson plan that's right for you.</p>
-    </div>
-
-    <Image
-      src={handsOnKeys}
-      alt="Piano student with their hands on the piano keys"
-    />
-  
-  </Grid>
-</Container>
-</section>
+      <Image
+        src={handsOnKeys}
+        alt="Piano student with their hands on the piano keys"
+      />
+    
+    </Grid>
+  </Container>
+</div>
 
 <style>
 .rates-intro {
   margin: 0;
-  padding-block: 11rem 7rem;
+  padding-block: 10rem;
   background: var(--dark-parchment-2);
 }
 

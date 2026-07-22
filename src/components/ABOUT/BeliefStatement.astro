@@ -5,21 +5,21 @@ import Container from '../UI/Container.astro';
 import pianoStudent from "../../assets/piano-student.jpg";
 ---
 
-<section class="about-intro">
+<div class="belief-statement">
   
+  <div class="intro">
     <Container size="narrow">
-      <div class="section-intro">
-        <h2>You can play the&nbsp;piano.</h2>
-        <p>People often say something like "I wish I'd kept up with piano," or "I wish I'd taken lessons when I was younger," implying a limiting belief that it's too late now for them to learn. Some are convinced that long hours of daily practice from early childhood is the only way. Some find music confusing, illogical, disorderly; a murky ocean of disconnected random notes, with attempts to learn feeling like rudderless drifting, lost at sea.</p>
-        <p>At Brooklyn Piano Studio, we believe that anyone can learn piano and music, regardless of age or past experience. Anyone who wants to learn can learn with a little time and effort. Anyone can make progress, not just with learning a couple of songs, but with building a real understanding of how music works: progress that sticks, a solid foundation that you can build upon. You can learn to play the piano, and we can help.</p>    
-    </div>
-  </Container>
+      <h2><span>YOU CAN</span><br/><span>play the piano.</span></h2>
+      <p class="standfirst">People often say something like "I wish I'd kept up with piano," or "I wish I'd taken lessons when I was younger," implying a limiting belief that it's too late now for them to learn. Some are convinced that long hours of daily practice from early childhood is the only way. Some find music confusing, illogical, disorderly; a murky ocean of disconnected random notes, with attempts to learn feeling like rudderless drifting, lost at sea.</p>
+      <p class="standfirst">At Brooklyn Piano Studio, we believe that anyone can learn piano and music, regardless of age or past experience. Anyone who wants to learn can learn with a little time and effort. Anyone can make progress, not just with learning a couple of songs, but with building a real understanding of how music works: progress that sticks, a solid foundation that you can build upon. You can learn to play the piano, and we can help.</p>    
+    </Container>
+  </div>
   
-  <Container size="wide">
-    
-    <Rule variant="spacer"/>
+  <Rule variant="spacer"/>
 
+  <Container size="wide">
     <div class="split">
+
       <Image
         src={pianoStudent}
         alt="Piano student at the piano"
@@ -33,36 +33,45 @@ import pianoStudent from "../../assets/piano-student.jpg";
         <h3>We're here to help</h3>
         <p>Our goal is to support your musical journey. Each student will move at their own pace, following the path that is right for them. Think of us as your sherpa up the mountain; your guide as you develop the skills to play piano, to experience the great joy of music, to enrich your life, to have fun!</p>
       </div>
-    </div>
 
+    </div>
   </Container>
-</section>
+  
+</div>
 
 <style>
-.about-intro {
+.belief-statement {
   margin: 0;
-  padding-block: 10rem 6rem;
+  padding-block: var(--section-spacing-lg) var(--section-spacing-md);
   background: var(--dark-parchment-2);
 }
 
-.about-intro .rule {
-  margin-bottom: var(--section-spacing-md);
+.intro {
+  padding-top: var(--section-spacing-xl);
+  margin: 0 auto var(--section-spacing-sm);
 }
 
-.section-intro {
-  width: 85%;
-  /* padding-bottom: 5rem; */
-  /* border-bottom: 1px solid rgba(60, 45, 30, 0.18); */
-  margin: 0 auto 5rem;
-}
-
-.text-container {
-  max-width: 52ch;
+h2,
+h3,
+p {
+  color: var(--dark-brown-ink);
 }
 
 h2 {
+  margin-bottom: var(--section-spacing-sm);
+  font-size: clamp(3.75rem, 6.35vw, 6.35rem);
+  line-height: 1.175; 
   text-align: center;
-  margin-bottom: 1.5rem;
+}
+
+h2 span:first-child {
+  font-size: 1.25em;
+  font-family: 'Gill Sans Condensed'; 
+  letter-spacing: .03em;
+}
+
+.intro h2 + p {
+  margin-top: var(--section-spacing-sm);
 }
 
 .split {
@@ -70,17 +79,11 @@ h2 {
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
   align-items: start;
-  padding-top: .25rem;
+  padding-top: .75rem;
 }
 @media (max-width: 700px) {
   .split {
     grid-template-columns: 1fr;
   }
-}
-
-h2,
-h3,
-p {
-  color: var(--dark-brown-ink);
 }
 </style>

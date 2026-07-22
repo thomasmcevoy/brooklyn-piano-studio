@@ -1,0 +1,20 @@
+---
+import Container from '../UI/Container.astro';
+import ContactIntro from './ContactIntro.astro';
+import ContactForm from './ContactForm.astro';
+---
+
+<section id="contact">
+  <Container size="narrow">
+    <ContactIntro/>
+    <ContactForm/>
+  </Container>
+</section>
+
+<style>
+#contact {
+  margin: 0;
+  padding-block: 9rem 4rem;
+  background: var(--dark-parchment-2);
+}
+</style>
