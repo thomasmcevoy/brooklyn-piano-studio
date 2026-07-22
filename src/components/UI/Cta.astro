@@ -2,14 +2,14 @@
 import Button from './Button.astro';
 
 const {
-  variant = "footer",
   text,
   buttonText,
-  href
+  variant,
+  href = "/#contact",
 } = Astro.props;
 ---
 
-<div class={`cta cta-${variant}`}>
+<div class={`cta ${variant}`}>
   <p>{text}</p>
   <Button 
     href={href} 
@@ -27,8 +27,9 @@ const {
   text-align: center;
 }
 
-/* --------------- Hero --------------- */
-.cta-hero {
+
+/* --------------- Hero variant --------------- */
+.cta.hero {
   position: absolute;
   left: 50%;
   bottom: 30vh;
@@ -38,26 +39,39 @@ const {
   z-index: 3;
 }
 
-.cta-hero p {
+.cta.hero p {
   font-style: italic;
   color: var(--parchment);
   text-wrap: balance;
 }
 
-/* --------------- Footer --------------- */
-.cta-footer {
+
+/* --------------- About variant --------------- */
+.cta.about {
+
+}
+
+.cta.about p {
+  font-style: italic;
+  color: var(--brown-ink);
+}
+
+
+
+/* --------------- Footer variant --------------- */
+.cta.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.cta-footer p {
+.cta.footer p {
   color: var(--footer-text-bright)
 }
 
 @media (max-width: 700px) {
-  .cta-footer {
+  .cta.footer {
     grid-column: 1 / -1;
     margin-top: var(--section-spacing-sm);
   }

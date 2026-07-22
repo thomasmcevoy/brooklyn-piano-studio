@@ -20,7 +20,6 @@ import heroImage from "../../assets/hero2.jpg";
     variant="hero"
     text="Individualized instruction for all ages and skill levels, tailored to your goals."
     buttonText="Schedule your first lesson"
-    href="/contact"
   />
   
 </div>
@@ -80,7 +79,7 @@ import heroImage from "../../assets/hero2.jpg";
 function buildTrail() {
   const titleWrap = document.querySelector(".hero-title-wrap");
   const title = titleWrap?.querySelector(".hero-title-base");
-  const cta = document.querySelector(".cta-hero");
+  const cta = document.querySelector(".cta.hero");
 
   if (!titleWrap || !title || !cta) return;
 

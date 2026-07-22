@@ -1,8 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import Rule from "../UI/Rule.astro";
+import Grid from "../UI/Grid.astro";
 import Container from '../UI/Container.astro';
 import pianoStudent from "../../assets/piano-student.jpg";
+import Cta from "../UI/Cta.astro";
 ---
 
 <div class="belief-statement">
@@ -17,32 +19,40 @@ import pianoStudent from "../../assets/piano-student.jpg";
   
   <Rule variant="spacer"/>
 
-  <Container size="wide">
-    <div class="split">
+  <div class="content">
+    <Container size="wide">
+      <Grid variant="split">
 
-      <Image
-        src={pianoStudent}
-        alt="Piano student at the piano"
-      />
-    
-      <div class="content">
-        <h3>Music is a language</h3>
-        <p>Like language, music is a logically organized system of sounds and symbols. Small building blocks (letters and notes) are composed into larger and larger structures. They both have conventions, patterns, and idioms. Understanding this system will help you learn the songs you want to play, or to write your own.</p>
-        <h3>Music is fun!</h3>
-        <p>Creative self expression is one of life's great joys. Playing music can help you relax when you're feeling stressed. It can bring a sense of accomplishment when you master a challenging song. It can open up new ways to connect with people and put you in touch with new friends and communities. It can enrich your life immensely.</p>
-        <h3>We're here to help</h3>
-        <p>Our goal is to support your musical journey. Each student will move at their own pace, following the path that is right for them. Think of us as your sherpa up the mountain; your guide as you develop the skills to play piano, to experience the great joy of music, to enrich your life, to have fun!</p>
-      </div>
+        <Image
+          src={pianoStudent}
+          alt="Piano student at the piano"
+        />
+      
+        <div>
+          <h3>Music is a language</h3>
+          <p>Like language, music is a logically organized system of sounds and symbols. Small building blocks (letters and notes) are composed into larger and larger structures. They both have conventions, patterns, and idioms. Understanding this system will help you learn the songs you want to play, or to write your own.</p>
+          <h3>Music is fun!</h3>
+          <p>Creative self expression is one of life's great joys. Playing music can help you relax when you're feeling stressed. It can bring a sense of accomplishment when you master a challenging song. It can open up new ways to connect with people and put you in touch with new friends and communities. It can enrich your life immensely.</p>
+          <h3>We're here to help</h3>
+          <p>Our goal is to support your musical journey. Each student will move at their own pace, following the path that is right for them. Think of us as your sherpa up the mountain; your guide as you develop the skills to play piano, to experience the joy of music, to enrich your life, to have fun!</p>
+        </div>
 
-    </div>
-  </Container>
+      </Grid>
+    </Container>
+  </div>
+
+  <Cta 
+    text="Ready to take the next step?"
+    buttonText="BOOK YOUR LESSON"
+    variant="about"
+  />
   
 </div>
 
 <style>
 .belief-statement {
   margin: 0;
-  padding-block: var(--section-spacing-lg) var(--section-spacing-md);
+  padding-block: var(--section-spacing-lg);
   background: var(--dark-parchment-2);
 }
 
@@ -71,19 +81,10 @@ h2 span:first-child {
 }
 
 .intro h2 + p {
-  margin-top: var(--section-spacing-sm);
+  margin-top: var(--section-spacing-xs);
 }
 
-.split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-  padding-top: .75rem;
-}
-@media (max-width: 700px) {
-  .split {
-    grid-template-columns: 1fr;
-  }
+.content {
+  padding-block: 1rem var(--section-spacing-sm);
 }
 </style>

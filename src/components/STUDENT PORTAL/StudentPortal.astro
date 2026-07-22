@@ -1,0 +1,62 @@
+---
+import Button from '../UI/Button.astro';
+import Container from '../UI/Container.astro';
+import SectionTitle from '../UI/SectionTitle.astro';
+---
+<section id="student-portal">
+  <SectionTitle>Student Portal</SectionTitle>
+
+  <Container size="narrow">
+
+    <p class="copy">Resources for current students.</p>
+    <p class="copy">A growing library of educational materials to support your practice between lessons.</p>
+    <p class="copy">Review lesson notes, practice materials, and helpful references between sessions.</p>
+
+    <a class="portal-link" href="/student-portal">
+      <span class="bracket">[</span>
+      Enter the Student Portal
+      <span class="arrow">→</span>
+      <span class="bracket">]</span>
+    </a>
+
+  </Container>
+
+</section>
+
+<style>
+#student-portal {
+  margin: 0;
+  padding-block: var(--section-spacing-lg);
+  background-color: var(--walnut);
+  color: var(--light-parchment);
+}
+
+p {
+  color: inherit;
+}
+
+.portal-link {
+  display: inline-block;
+  margin-block: var(--section-spacing-sm) var(--section-spacing-xs);
+  font-size: clamp(1.15rem, 1rem + 0.4vw, 1.35rem);
+  letter-spacing: .03em;
+  color: var(--light-gold);
+
+  text-decoration: none;
+  border-bottom: 1px solid var(--light-gold);
+  padding-bottom: .125em;
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.portal-link:hover {
+  color: var(--light-gold-hover);
+}
+
+.portal-link .bracket {
+  margin-inline: .25em;
+}
+
+.portal-link .arrow {
+  margin-left: .5em;
+}
+</style>
