@@ -4,10 +4,10 @@ const currentPath = Astro.url.pathname;
 
 <nav>
   <ul>
-    <li><a href="/#about" class={currentPath.startsWith("/about") ? "active" : ""}>About</a></li>
-    <li><a href="/#rates" class={currentPath.startsWith("/rates") ? "active" : ""}>Rates</a></li>
-    <li><a href="/#contact" class={currentPath.startsWith("/contact") ? "active" : ""}>Contact</a></li>
-    <li><a href="/#student-portal" class={currentPath.startsWith("/student-portal") ? "active" : ""}>Student Portal</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#rates">Rates</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="/#student-portal">Student Portal</a></li>
   </ul>
 </nav>
 
@@ -43,16 +43,14 @@ nav li {
   margin: 0;
 }
 
-nav a {
-  transform: translateY(.15rem);  /* compensating for gill sans' high vertical placement */;
-}
-
 nav li a:not(.active):hover {
   color: var(--gold);
 }
 
-nav a.active {
-  cursor: default;
+nav a {
+  position: relative;
+  text-decoration: none;
+  transform: translateY(.15rem);  /* compensating for gill sans' high vertical placement */;
 }
 
 nav a.active::after {
@@ -63,5 +61,66 @@ nav a.active::after {
   width: 100%;
   height: .075em;
   background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .25s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  transform: scaleX(1);
 }
 </style>
+
+<script>
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll("nav a[href*='#']");
+
+function setActiveLink(id) {
+  navLinks.forEach(link => {
+    link.classList.toggle(
+      "active",
+      link.hash === `#${id}`
+    );
+  });
+}
+
+function getHeaderHeight() {
+  return parseFloat(
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--header-height")
+  ) || 0;
+}
+
+function updateActiveSection() {
+  const offset = getHeaderHeight() - .1;
+
+  let current = "";
+
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+
+    if (top <= offset) {
+      current = section.id;
+    }
+  });
+
+  if (current) {
+    setActiveLink(current);
+  }
+}
+
+window.addEventListener("scroll", updateActiveSection, {
+  passive: true
+});
+
+window.addEventListener("resize", updateActiveSection);
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    setActiveLink(link.hash.slice(1));
+  });
+});
+
+updateActiveSection();
+</script>

@@ -14,3 +14,29 @@ import StudentPortal from '../components/STUDENT PORTAL/StudentPortal.astro';
   <Contact/>
   <StudentPortal/>
 </Layout>
+
+<style>
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>('#site-header');
+
+  if (!header) {
+    throw new Error('Expected #site-header to exist.');
+  }
+
+  function updateHeaderHeight(header: HTMLElement) {
+    document.documentElement.style.setProperty(
+      '--header-height',
+      `${header.offsetHeight}px`
+    );
+  }
+
+  updateHeaderHeight(header);
+
+  const observer = new ResizeObserver(() => {
+    updateHeaderHeight(header);
+  });
+
+  observer.observe(header);
+</script>

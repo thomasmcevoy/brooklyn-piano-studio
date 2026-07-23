@@ -4,7 +4,7 @@ import Wordmark from '../UI/Wordmark.astro';
 import Nav from './HeaderNav.astro';
 ---
 
-<header>
+<header id="site-header">
   <Container size="wide">
     <div class="header-inner">
       
@@ -19,7 +19,7 @@ import Nav from './HeaderNav.astro';
 </header>
 
 <style>
-header {
+#site-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -43,7 +43,7 @@ header {
   transform: translateY(-.25rem);  /* fix wordmark vertical position  */
 }
 
-:global(header a) {
+:global(#site-header a) {
   color: var(--ink);
   text-decoration: none;
 }
