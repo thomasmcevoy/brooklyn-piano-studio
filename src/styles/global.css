@@ -95,6 +95,9 @@ html {
   background: var(--site-background-color);
 }
 
+section {
+  scroll-margin-top: calc(var(--header-height) - 1px);
+}
 
 /* ----------- TYPOGRAPHICAL STYLES ------------ */
 h1,
