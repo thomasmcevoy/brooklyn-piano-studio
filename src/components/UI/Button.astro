@@ -25,13 +25,13 @@ const {
   border: none;
 }
 
-a.button {
-  text-decoration: none;
-}
-
 .button span {
   position: relative;
   font-family: "Gill Sans", sans-serif;
+}
+
+a.button {
+  text-decoration: none;
 }
 
 
@@ -52,16 +52,18 @@ a.button {
 
 
 /* --------------- About variant --------------- */
-.about {
+.about.button {
+  margin-top: 0;
+  margin-inline: 0;
   color: var(--parchment);
   background-color: var(--light-gold);
 }
 
-.about:hover {
+.about.button:hover {
   background-color: var(--light-gold-hover);
 }
 
-.about span {
+.about.button span {
   top: 0.15em;
   font-size: .9rem;
   letter-spacing: .125em;
@@ -69,7 +71,7 @@ a.button {
 
 
 /* --------------- Footer variant --------------- */
-.footer {
+.footer.button {
   margin-top: 0;
   margin-inline: 0;
   background-color: var(--muted-maroon);
@@ -77,11 +79,11 @@ a.button {
   /* opacity: .98; */
 }
 
-.footer:hover {
+.footer.button:hover {
   background-color: var(--footer-maroon-hover);
 }
 
-.footer span {
+.footer.button span {
   top: 0.15em;
   font-size: .9rem;
   letter-spacing: .125em;
@@ -90,42 +92,21 @@ a.button {
 
 /* --------------- Contact variant --------------- */
 .contact.button {
+  margin-inline: auto;
+  margin-bottom: 0;
   width: fit-content;
-}
-
-.contact {
   background: var(--maroon);
   color: var(--parchment);
-  /* border: 1px solid var(--maroon); */
-  margin-inline: auto;
+  
 }
 
-.contact:hover {
+.contact.button:hover {
   background: var(--bright-maroon);
 }
 
-.contact span {
+.contact.button span {
   top: 0.1em;
   font-size: .9rem;
   letter-spacing: .125em;
 }
-
-/* --------------- Portal variant --------------- */
-.portal {
-  color: var(--parchment);
-  background-color: var(--bright-gold);
-  margin-inline: auto;
-  text-align: center;
-}
-
-.portal:hover {
-  background-color: var(--bright-gold-hover);
-}
-
-.portal span {
-  top: 0.15em;
-  font-size: 1rem;
-  font-style: italic;
-}
-
 </style>

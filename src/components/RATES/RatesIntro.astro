@@ -11,7 +11,7 @@ import Grid from '../UI/Grid.astro';
     
       <div class="rates-intro-content">
         <h2>Rates & Lesson Options</h2>
-        <p class="prose">Every student has different goals, schedules, and experience levels, so lessons are offered in a variety of formats. Whether you're looking for an occasional refresher or weekly private instruction, you'll find an option designed to fit your needs.</p>
+        <p class="prose">We understand that every student has different goals, schedules, and experience levels, and that's why we offer lessons in a variety of formats. Whether you're looking for an occasional refresher or weekly private instruction, you'll find an option designed to fit your needs.</p>
         <p class="prose">If you're unsure which format is the best fit, feel free to <a href="/contact/">reach out</a>. We're always happy to discuss your goals and recommend a lesson plan that's right for you.</p>
       </div>
 
@@ -27,8 +27,14 @@ import Grid from '../UI/Grid.astro';
 <style>
 .rates-intro {
   margin: 0;
-  padding-block: 10rem;
+  padding-block: var(--section-spacing-xl);
   background: var(--dark-parchment-2);
+}
+
+@media (max-width: 700px) {
+  .rates-intro {
+    padding-block: var(--section-spacing-lg);
+  }
 }
 
 .rates-intro-content {

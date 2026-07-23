@@ -1,12 +1,11 @@
 ---
 const {
-  variant = "",  // panels, split, footer
-  mode = "",  // compact, expanded
+  variant = "",
   class: className = ""
 } = Astro.props;
 ---
 
-<div class={`grid ${variant} ${mode} ${className}`}>
+<div class={`grid ${variant} ${className}`}>
   <slot />
 </div>
 
@@ -28,7 +27,7 @@ const {
   .grid.panels {
     grid-template-columns: 1fr;
     justify-items: center;
-    row-gap: 1.5rem;
+    row-gap: 0;
   }
 }
 
@@ -38,7 +37,7 @@ const {
 .grid.split {
   grid-template-columns: 1fr 1fr;
   column-gap: 2.5rem;
-  /* row-gap: 3rem; */
+  row-gap: 2rem;
 }
 
 @media (max-width: 700px) {
@@ -50,26 +49,19 @@ const {
 
 /* ---------- Footer ---------- */
 .grid.footer {
-  column-gap: 3rem;
+  grid-template-columns: auto auto auto;
   justify-content: space-between;
-}
-
-.grid.footer.compact {
-  grid-template-columns: repeat(2, auto);
-}
-
-.grid.footer.expanded {
-  grid-template-columns: repeat(3, auto);
+  column-gap: 3rem;
+  margin-top: 2rem;
 }
 
 @media (max-width:700px) {
-  .grid.footer.compact,
-  .grid.footer.expanded {
-    grid-template-columns: repeat(2, auto);
+  .grid.footer {
+    grid-template-columns: auto auto;
     row-gap: 2rem;
   }
 
-  .grid.footer.expanded > :last-child {
+  .grid.footer > :last-child {
     grid-column: 1 / -1;
   }
 }

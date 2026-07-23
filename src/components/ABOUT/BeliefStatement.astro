@@ -13,7 +13,7 @@ import Cta from "../UI/Cta.astro";
     <Container size="narrow">
       <h2><span>YOU CAN</span><br/><span>play the piano.</span></h2>
       <p class="standfirst">People often say something like "I wish I'd kept up with piano," or "I wish I'd taken lessons when I was younger," implying a limiting belief that it's too late now for them to learn. Some are convinced that long hours of daily practice from early childhood is the only way. Some find music confusing, illogical, disorderly; a murky ocean of disconnected random notes, with attempts to learn feeling like rudderless drifting, lost at sea.</p>
-      <p class="standfirst">At Brooklyn Piano Studio, we believe that anyone can learn piano and music, regardless of age or past experience. Anyone who wants to learn can learn with a little time and effort. Anyone can make progress, not just with learning a couple of songs, but with building a real understanding of how music works: progress that sticks, a solid foundation that you can build upon. You can learn to play the piano, and we can help.</p>    
+      <p class="standfirst">At Brooklyn Piano Studio we believe that anyone can learn piano and music, regardless of age or prior experience. Anyone who wants to learn can make meaningful progress with a modest, consistent commitment of time and effort. With proper guidance, you won't just learn a couple of songs; you'll build a real understanding of how music works: progress that sticks, a solid foundation that you can build upon. You can learn to play the piano, and we can help.</p>    
     </Container>
   </div>
   
@@ -56,10 +56,23 @@ import Cta from "../UI/Cta.astro";
   background: var(--dark-parchment-2);
 }
 
-.intro {
-  padding-top: var(--section-spacing-xl);
-  margin: 0 auto var(--section-spacing-sm);
+@media (max-width: 700px) {
+  .belief-statement {
+    padding-block: var(--section-spacing-md);
+  }
 }
+
+.intro {
+  margin: 0;
+  padding-top: var(--section-spacing-xl);
+}
+
+@media (max-width: 700px) {
+  .intro {
+    padding-top: var(--section-spacing-lg);
+  }
+}
+
 
 h2,
 h3,

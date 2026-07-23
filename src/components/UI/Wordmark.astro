@@ -1,10 +1,10 @@
 ---
-const { text, class: className = "" } = Astro.props;
+const { text } = Astro.props;
 
 const words = text.split(" ");
 ---
 
-<span class={`wordmark ${className}`}>
+<span class={`wordmark`}>
   {words.map((word, index) => (
     <>
       <span class="word">
