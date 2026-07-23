@@ -29,6 +29,10 @@ import Grid from '../UI/Grid.astro';
   margin: 0;
   padding-block: var(--section-spacing-xl);
   background: var(--dark-parchment-2);
+
+  min-height: calc(100svh - var(--header-height) + 1rem);
+  display: grid;
+  align-content: center;
 }
 
 @media (max-width: 700px) {
