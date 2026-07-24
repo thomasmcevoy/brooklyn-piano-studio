@@ -53,6 +53,8 @@
   --antique-gold-hover: #C5AF7A;
   --light-gold: #9C7F55;
   --light-gold-hover: #A88A5D;
+  --dark-antique-gold: #A48656;
+  --dark-antique-gold-hover: #B0925F;
 
   --burnt-walnut: #241815;
   --espresso: #2C1D18;
@@ -68,11 +70,32 @@
   --bright-walnut: #5a4030;
   
   --muted-maroon: #5A3038;
+  --warm-muted-maroon: #702B3A;
+  --warm-muted-maroon-hover: #7A3043;
   --footer-maroon-hover: #742437;
   --maroon: #800020;
+  --maroon-hover: #89172E;
   --bright-maroon: #951d35;
   
   --form-label: #756E67;
+
+  --slate-text-dark:   #555B66;
+  --slate-text:        #626975;
+  --slate-text-light:  #707783;
+  --slate-text-hover:  #9BA1AB;
+  --slate-text-bright: #B8BEC8;
+  /* --slate-text-dark:  #565C67;
+  --slate-text:       #646B77;
+  --slate-text-light: #7D8490;
+  --slate-text-bright: #C2C7D0; */
+  /* --slate-text-dark: #5B606B;
+  --slate-text: #69707C;
+  --slate-text-light: #858B96;
+  --slate-text-bright: #C2C7D0; */
+  /* --slate-text: #5F6470;
+  --slate-text-2: #626771;
+  --slate-text-3: #7D828C;
+  --slate-text-bright: rgb(194, 199, 208); */
   --site-background-color: rgb(19, 22.5, 30.5);
 
   /* bg-[#D8CEBC] text-[#4A4038] */

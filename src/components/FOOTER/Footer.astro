@@ -34,13 +34,8 @@ const { showCta } = Astro.props;
 
 <style>
 footer {
-  --footer-text: #5F6470;
-  --footer-text-2: #626771;
-  --footer-text-3: #7D828C;
-  --footer-text-bright: rgb(194, 199, 208);
-  
-  padding-top: var(--section-spacing-md);
-  padding-bottom: var(--section-spacing-sm);
+  padding-top: var(--section-spacing-lg);
+  padding-bottom: var(--section-spacing-xs);
   background-color: var(--site-background-color);
 }
 
@@ -49,17 +44,18 @@ footer {
   padding-bottom: .375rem;
   border-bottom: 1px solid rgba(232, 221, 207, 0.2);
   text-align: center;
-  color: var(--footer-text);
+  color: var(--slate-text);
   font-size: 1.5rem;
-  letter-spacing: .1rem ;
+  letter-spacing: .1rem;
   opacity: .8;
 }
 
 .copyright {
-  margin-top: var(--section-spacing-xs);
+  margin-top: var(--section-spacing-lg);
   text-align: center;
   font-style: italic;
-  color: var(--footer-text-3);
-  opacity: 0.7;
+  color: var(--slate-text-dark);
+  letter-spacing: .01rem;
+  /* opacity: 0.7; */
 }
 </style>
