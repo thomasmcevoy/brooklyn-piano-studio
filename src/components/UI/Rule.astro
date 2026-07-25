@@ -18,13 +18,14 @@ const { variant } = Astro.props;
 
 /* ----------- section-title variant ---------- */
 .rule.section-title {
-  height: .05rem;
-  background: #b4ab9e;
+  height: .09rem;
+  background: rgba(255, 255, 255, .08);
 }
 
-.rule.instructor-bio .rule.section-title {
-  background: var(--gold);
-}
+/* :global(.instructor-bio .rule.section-title) {
+  height: .075rem;
+  background: rgba(255, 255, 255, .075);
+} */
 
 
 /* -------------- footer variant -------------- */

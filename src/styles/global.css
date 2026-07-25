@@ -65,7 +65,6 @@
   --ink: #3b3028;
   --dark-brown-ink: #42362d;
   --brown-ink: #46372d;
-  --taupe: #494240;
   --walnut: #514035;
   --bright-walnut: #5a4030;
   
@@ -80,6 +79,9 @@
   --form-label: #756E67;
   --muted-warm-gray: #8a8378;
 
+  --taupe: #494240;
+  --taupe-rule: #55504c;
+  
   --slate-text-dark:   #555B66;
   --slate-text:        #626975;
   --slate-text-light:  #707783;
