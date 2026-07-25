@@ -56,23 +56,20 @@ import Cta from "../UI/Cta.astro";
   background: var(--dark-parchment-2);
 }
 
-@media (max-width: 700px) {
-  .belief-statement {
-    padding-block: var(--section-spacing-md);
-  }
-}
-
 .intro {
   margin: 0;
   padding-top: var(--section-spacing-xl);
 }
 
 @media (max-width: 700px) {
+  .belief-statement {
+    padding-block: var(--section-spacing-md);
+  }
+
   .intro {
     padding-top: var(--section-spacing-lg);
   }
 }
-
 
 h2,
 h3,
@@ -82,7 +79,8 @@ p {
 
 h2 {
   margin-bottom: var(--section-spacing-sm);
-  font-size: clamp(3.75rem, 6.35vw, 6.35rem);
+  font-size: clamp(2.5rem, calc(2.5rem + 1.75vw), 5rem);
+
   line-height: 1.175; 
   text-align: center;
 }
