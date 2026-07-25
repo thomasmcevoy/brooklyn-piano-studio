@@ -16,23 +16,35 @@ const { variant } = Astro.props;
   }
 }
 
-/* Under section headings */
-.section-title {
+/* ----------- section-title variant ---------- */
+.rule.section-title {
   height: .05rem;
+  background: #b4ab9e;
+}
+
+.rule.instructor-bio .rule.section-title {
   background: var(--gold);
 }
 
-/* Under the footer wordmark */
-.wordmark {
+
+/* -------------- footer variant -------------- */
+.rule.wordmark {
   margin-top: .375rem;
   height: 1px;
   background: rgba(232, 221, 207, 0.2);
 }
 
-/* Standalone decorative separator */
-.spacer {
+
+/* -------------- spacer variant -------------- */
+.rule.spacer {
   height: 1px;
-  margin-block: var(--section-spacing-md);
-  background: rgba(60, 45, 30, 0.18);
+  margin-block: var(--space-lg);
+  background: #b4ab9e;
+}
+
+@media (max-width: 700px) {
+  .rule.spacer {
+    margin-block: var(--space-md);
+  }
 }
 </style>

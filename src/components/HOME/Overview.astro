@@ -41,7 +41,7 @@ import Panel from '../UI/Panel.astro';
         
       <Panel>
         <h3>Build your skills</h3>
-        <ul class="decorated">
+        <ul class="decorated skills">
           <li>Music theory</li>
           <li>How to learn by ear</li>
           <li>Note reading & music notation</li>
@@ -57,8 +57,8 @@ import Panel from '../UI/Panel.astro';
 
 <style>
 .overview {
-  padding-top: var(--section-spacing-lg);
-  padding-bottom: var(--section-spacing-md);
+  padding-top: var(--section-spacing-md);
+  padding-bottom: var(--section-spacing-sm);
   background: var(--walnut);
 
   min-height: calc(100vh - var(--header-height) + 1rem);
@@ -68,7 +68,8 @@ import Panel from '../UI/Panel.astro';
 
 @media (max-width: 700px) {
   .overview {
-    padding-block: var(--section-spacing-md) var(--section-spacing-sm);
+    padding-bottom: var(--section-spacing-sm);
+    padding-bottom: var(--section-spacing-sm);
   }
 }
 
@@ -84,5 +85,9 @@ import Panel from '../UI/Panel.astro';
 
 ul.three-ways li {
   margin-bottom: 1.25rem;
+}
+
+ul.skills {
+  margin-bottom: 0;
 }
 </style>

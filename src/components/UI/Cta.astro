@@ -27,6 +27,10 @@ const {
   text-align: center;
 }
 
+.cta p {
+  margin-bottom: 1rem;
+}
+
 
 /* --------------- Hero variant --------------- */
 .cta.hero {
@@ -47,8 +51,10 @@ const {
 
 
 /* --------------- About variant --------------- */
-.cta.about {
-
+@media (min-width: 701px) {
+  .cta.about {
+    padding-top: var(--space-xs);
+  }
 }
 
 .cta.about p {
@@ -73,7 +79,7 @@ const {
 @media (max-width: 700px) {
   .cta.footer {
     grid-column: 1 / -1;
-    margin-top: var(--section-spacing-sm);
+    margin-top: var(--section-spacing-xs);
   }
 }
 </style>

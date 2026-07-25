@@ -28,15 +28,23 @@ const { showCta } = Astro.props;
       
     </Grid>
 
-    <p class="copyright"><small>All content &copy; 2026 Brooklyn Piano Studio</small></p>
+    <p class="copyright">
+      <small>&copy; 2026 Brooklyn Piano Studio. All rights reserved.</small>
+    </p>
   </Container>
 </footer>
 
 <style>
 footer {
-  padding-top: var(--section-spacing-lg);
-  padding-bottom: var(--section-spacing-xs);
+  padding-top: var(--section-spacing-md);
+  padding-bottom: var(--space-lg);
   background-color: var(--site-background-color);
+}
+
+@media (max-width: 700px) {
+  footer {
+    padding-top: var(--section-spacing-md);
+  }
 }
 
 .wordmark-container {
@@ -51,11 +59,22 @@ footer {
 }
 
 .copyright {
-  margin-top: var(--section-spacing-lg);
+  margin-top: var(--section-spacing-md);
   text-align: center;
   font-style: italic;
   color: var(--slate-text-dark);
   letter-spacing: .01rem;
-  /* opacity: 0.7; */
 }
+
+.copyright span {
+  font-style: normal;
+  padding-block: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .copyright {
+    margin-top: var(--section-spacing-md);
+  }
+}
+
 </style>

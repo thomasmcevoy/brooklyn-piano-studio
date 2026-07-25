@@ -1,14 +1,20 @@
 ---
+import Rule from '../UI/Rule.astro';
 import Container from '../UI/Container.astro';
 import ContactIntro from './ContactIntro.astro';
 import ContactForm from './ContactForm.astro';
 ---
 
 <section id="contact">
+  
+  <ContactIntro/>
+
+  <!-- <Rule variant="spacer"/> -->
+
   <Container size="narrow">
-    <ContactIntro/>
     <ContactForm/>
   </Container>
+  
 </section>
 
 <style>
@@ -16,5 +22,11 @@ import ContactForm from './ContactForm.astro';
   margin: 0;
   padding-block: var(--section-spacing-lg);
   background: var(--dark-parchment-2);
+}
+
+@media (max-width: 700px) {
+  #contact {
+    padding-block: var(--section-spacing-md);
+  }
 }
 </style>

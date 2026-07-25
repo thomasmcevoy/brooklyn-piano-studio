@@ -28,9 +28,13 @@ import SectionTitle from '../UI/SectionTitle.astro';
   margin: 0;
   padding-block: var(--section-spacing-lg);
   background-color: var(--taupe);
-
-
   color: var(--light-parchment);
+}
+
+@media (max-width: 700px) {
+  #student-portal {
+    padding-block: var(--section-spacing-md);
+  }
 }
 
 p {
@@ -39,7 +43,8 @@ p {
 
 .portal-link {
   display: inline-block;
-  margin-block: var(--section-spacing-sm) var(--section-spacing-xs);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xs);
   font-size: clamp(1.15rem, 1rem + 0.4vw, 1.35rem);
   letter-spacing: .03em;
   color: var(--light-gold);
