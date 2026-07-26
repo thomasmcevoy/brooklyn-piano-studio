@@ -74,6 +74,7 @@ nav a.active::after {
 <script>
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll("nav a[href*='#']");
+const footer = document.querySelector("footer");
 
 function setActiveLink(id) {
   navLinks.forEach(link => {
@@ -93,6 +94,12 @@ function getHeaderHeight() {
 
 function updateActiveSection() {
   const offset = getHeaderHeight() - .1;
+
+  // If we've reached the footer, clear the active nav item.
+  if (footer && footer.getBoundingClientRect().top <= offset) {
+    setActiveLink("");
+    return;
+  }
 
   let current = "";
 
