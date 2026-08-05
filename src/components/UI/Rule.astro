@@ -21,6 +21,11 @@ const { variant } = Astro.props;
   height: .09rem;
   background: rgba(255, 255, 255, .08);
 }
+:global(.rates-intro .rule.section-title) {
+  height: .9px;
+  background: var(--muted-warm-gray);
+  /* background: #b4ab9e; */
+}
 
 /* :global(.instructor-bio .rule.section-title) {
   height: .075rem;
@@ -41,6 +46,9 @@ const { variant } = Astro.props;
   height: 1px;
   margin-block: var(--section-spacing-sm);
   background: #b4ab9e;
+}
+:global(.rates-intro .rule.spacer) {
+  width: 100%;
 }
 
 @media (max-width: 700px) {
