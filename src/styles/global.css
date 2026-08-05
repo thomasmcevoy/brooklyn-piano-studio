@@ -92,24 +92,17 @@
   /* bg-[#D8CEBC] text-[#4A4038] */
   --pico-font-family: "Gill Sans Book", sans-serif;
 
-  /* component rhythm */
+  /* -------------------- component rhythm -------------------- */
   --space-xs: clamp(.5rem, 1.5vw, 1rem);
   --space-sm: clamp(1rem, 2.5vw, 1.75rem);
   --space-md: clamp(1.5rem, 4vw, 3rem);
   --space-lg: clamp(2.5rem, 5vw, 4rem);
 
-  /* page rhythm */
+  /* -------------------- page rhythm -------------------- */
   --section-spacing-sm: clamp(3rem, 7vw, 6rem);
   --section-spacing-md: clamp(5rem, 10vw, 8rem);
   --section-spacing-lg: clamp(7rem, 13vw, 11rem);
   --section-spacing-xl: clamp(9rem, 16vw, 14rem);
-
-  /* section spacing (old)
-  --section-spacing-xs: clamp(1.25rem, 4vw, 3rem);
-  --section-spacing-sm: clamp(2rem, 6vw, 5rem);
-  --section-spacing-md: clamp(3rem, 8vw, 6rem);
-  --section-spacing-lg: clamp(5rem, 10vw, 8rem);
-  --section-spacing-xl: clamp(7rem, 13vw, 11rem); */
 }
 
 .font-body {
@@ -119,13 +112,14 @@
 
 html {
   background: var(--site-background-color);
+  scroll-padding-top: var(--header-height);
 }
 
-section {
+/* section {
   scroll-margin-top: calc(var(--header-height) - 1px);
-}
+} */
 
-/* ----------- TYPOGRAPHICAL STYLES ------------ */
+/* -------------------- TYPOGRAPHICAL STYLES -------------------- */
 h1,
 h2,
 h3 {
@@ -172,7 +166,7 @@ p.standfirst {
 }
 
 
-/* ---------- PICO OVERRIDES ---------- */
+/* -------------------- PICO OVERRIDES -------------------- */
 
 ul li {
   list-style-type: none;
