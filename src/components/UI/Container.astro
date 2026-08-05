@@ -18,7 +18,7 @@ const { size } = Astro.props;
 }
 
 .medium-flexible {
-  --max-width: clamp(400px, 75vw, 1000px);
+  --max-width: clamp(400px, calc(70vw + 3rem), 1000px);
 }
 
 .narrow {
@@ -26,6 +26,6 @@ const { size } = Astro.props;
 }
 
 .extra-narrow {
-  --max-width: 51ch;
+  --max-width: 48ch;
 }
 </style>

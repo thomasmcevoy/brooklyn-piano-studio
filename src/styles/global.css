@@ -115,9 +115,9 @@ html {
   scroll-padding-top: var(--header-height);
 }
 
-/* section {
+section {
   scroll-margin-top: calc(var(--header-height) - 1px);
-} */
+}
 
 /* -------------------- TYPOGRAPHICAL STYLES -------------------- */
 h1,
@@ -139,7 +139,7 @@ p a {
 
 .prose {
   font-size: clamp(1rem, calc(1.2rem - .5vw), 1.0625rem);
-  line-height: 1.55;
+  line-height: 1.65;
   letter-spacing: .01rem;
 }
 

@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import handsOnKeys from '../../assets/hands-on-keys.jpg';
-import SectionTitle from '../UI/SectionTitle.astro';
 import Container from '../UI/Container.astro';
 import Rule from '../UI/Rule.astro';
 import Grid from '../UI/Grid.astro';
@@ -18,13 +17,15 @@ import Grid from '../UI/Grid.astro';
     <Container size="medium-flexible">
       <Grid variant="split">
       
-        <Image
-          src={handsOnKeys}
-          alt="Piano student with their hands on the piano keys"
-        />
+        <div class="split-image">
+          <Image
+            src={handsOnKeys}
+            alt="Piano student with their hands on the piano keys"
+          />
+        </div>
       
         <div class="rates-intro-content">
-          <p class="copy">We understand that every student has different goals, schedules, and experience levels, and thus we offer lessons in a variety of formats. Whether you're looking for an occasional refresher or weekly private instruction, you'll find an option tailored to your goals and lifestyle.</p>
+          <p class="prose">We understand that every student has different goals, schedules, and experience levels, and thus we offer lessons in a variety of formats. Whether you're looking for an occasional refresher or weekly private instruction, you'll find an option tailored to your goals and lifestyle.</p>
         </div>
         
       </Grid>
@@ -32,7 +33,7 @@ import Grid from '../UI/Grid.astro';
   </div>
 
   <Container size="extra-narrow">
-    <p class="copy">If you're unsure which format is the best fit or have needs outside what is described below, feel free to <a href="/contact/">reach out</a>. We're always happy to discuss your goals and recommend a lesson plan that's right for you.</p>
+    <p class="prose">If you're unsure which format is the best fit or have needs outside what is described below, feel free to <a href="/contact/">reach out</a>. We're always happy to discuss your goals and recommend a lesson plan that's right for you.</p>
    
   </Container>
 </div>
@@ -65,15 +66,19 @@ import Grid from '../UI/Grid.astro';
   margin-bottom: 2.1rem;
 }
 
-.rates-intro-content {
-  align-self: center;
+.split-image {
+  height: 100%;
 }
 
-h2 span {
-  /* font-family: 'Gill Sans Condensed'; */
-  font-size: 130%;
-  font-weight: 400;
-  margin-inline: .3em;
+.split-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rates-intro-content {
+  align-self: center;
 }
 
 .rates-intro-content p:last-of-type {
