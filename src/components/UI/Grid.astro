@@ -15,24 +15,34 @@ const {
 }
 
 
-/* ---------- Panels ---------- */
+
+/* -------------------- Panels -------------------- */
 
 .grid.panels {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+
   column-gap: 3.5rem;
   row-gap: 3.5rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .grid.panels {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-    row-gap: 1rem;
+    row-gap: 3rem;
+  }
+
+  @media (max-width: 700px) {
+    .grid.panels {
+      grid-template-columns: 1fr;
+      row-gap: 1.5rem;
+    }
   }
 }
 
 
-/* ---------- Split ---------- */
+
+/* -------------------- Split -------------------- */
 
 .grid.split {
   grid-template-columns: 1fr 1fr;
@@ -47,7 +57,8 @@ const {
 }
 
 
-/* ---------- Footer ---------- */
+
+/* -------------------- Footer -------------------- */
 .grid.footer {
   grid-template-columns: auto auto auto;
   justify-content: space-between;

@@ -1,8 +1,11 @@
 ---
-const { class: className = "" } = Astro.props;
+const {
+  variant = "",
+  class: className = ""
+} = Astro.props;
 ---
 
-<article class={`panel ${className}`}>
+<article class={`panel ${variant} ${className}`}>
   <slot />
 </article>
 
@@ -13,10 +16,45 @@ const { class: className = "" } = Astro.props;
   box-shadow: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .panel {
     width: min(100%, 16rem);
     min-width: 0;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .panel.standalone {
+    grid-column: 1 / -1;
+  }
+
+  .overview .panel.standalone {
+    width: min(100%, 39rem);
+    margin-inline: auto;
+  }
+
+  .overview .panel.standalone li {
+    padding: 1rem;
+  }
+
+  .overview .panel.standalone h3 {
+    text-align: center;
+  }
+
+  .overview .panel.standalone li h4 {
+    display: block;
+  }
+
+  .overview .panel.standalone ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .panel {
+    margin-block: .2rem;
   }
 }
 
@@ -60,7 +98,7 @@ const { class: className = "" } = Astro.props;
 }
 
 
-/* ---------- Decorated list items ---------- */
+/* -------------------- Decorated list items -------------------- */
 .panel ul.decorated {
   list-style: none;
   padding: 0;
