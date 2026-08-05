@@ -168,7 +168,7 @@ p.standfirst {
 /* ipad font size bump */
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   :root {
-    --pico-font-size: 117%;
+    --pico-font-size: 116%;
   }
 }
 
