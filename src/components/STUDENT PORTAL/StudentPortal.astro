@@ -41,9 +41,11 @@ p {
 }
 
 .portal-link {
-  display: inline-block;
-  margin-top: var(--space-lg);
+  display: block;
+  width: fit-content;
+  margin-top: calc(var(--space-lg) + var(--space-md));
   margin-bottom: var(--space-xs);
+  margin-inline: auto;
   font-size: clamp(1.15rem, 1rem + 0.4vw, 1.35rem);
   letter-spacing: .03em;
   color: var(--light-gold);
