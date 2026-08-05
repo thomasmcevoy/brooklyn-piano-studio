@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import Rule from "../UI/Rule.astro";
-import Grid from "../UI/Grid.astro";
 import Container from '../UI/Container.astro';
 import pianoStudent from "../../assets/piano-student.jpg";
 import Cta from "../UI/Cta.astro";
@@ -9,43 +8,48 @@ import Cta from "../UI/Cta.astro";
 
 <div class="belief-statement">
   
-  <div class="intro">
-    <Container size="narrow">
+  <Container size="narrow">
+    <div class="intro">
       <h2><span>YOU CAN</span><br/><span>play the piano.</span></h2>
       <p class="standfirst">People often say something like "I wish I'd kept up with piano," or "I wish I'd taken lessons when I was younger," implying a limiting belief that it's too late now for them to learn. Some are convinced that long hours of daily practice from early childhood is the only way. Some find music confusing, illogical, disorderly; a murky ocean of disconnected random notes, with attempts to learn feeling like rudderless drifting, lost at sea.</p>
       <p class="standfirst">At Brooklyn Piano Studio we believe that anyone can learn piano and music, regardless of age or prior experience. Anyone who wants to learn can make meaningful progress with a modest, consistent commitment of time and effort. With proper guidance, you won't just learn a couple of songs; you'll build a real understanding of how music works: progress that sticks, a solid foundation that you can build upon. You can learn to play the piano, and we can help.</p>    
-    </Container>
-  </div>
+    </div>
+  </Container>
   
   <Rule variant="spacer"/>
 
-  <div class="content">
-    <Container size="wide">
-      <Grid variant="split">
+  <Container size="wide">
+    <div class="content">
+    
+      <div class="content-copy">
+        <h3>Music is a language</h3>
+        <p class="prose">Like language, music is an organized system of sounds and symbols that communicates meaning and emotion. Notes are building blocks that are composed into larger and larger structures, usually following established conventions, patterns, and idioms. Grasping this framework will help you learn the songs you want to play, and write your own too.</p>
+        <h3>Music is fun!</h3>
+        <p class="prose">Creative self expression is one of life's great joys. Playing music can help you relax when you're feeling stressed. It brings a sense of accomplishment when you master a challenging song. It can open up new ways to connect with people and put you in touch with new friends and communities, enriching your life immensely.</p>
+        <h3>We're here to help</h3>
+        <p class="prose">Our goal is to support your musical journey. Each student will move at their own pace, following the path that is right for them. Think of us as your sherpa; your guide as you develop the skills to play piano, to experience the joy of music, to enrich your life, to have fun!</p>
+      </div>
 
+      <div class="content-image">
         <Image
           src={pianoStudent}
           alt="Piano student at the piano"
         />
-      
-        <div class="extra-points">
-          <h3>Music is a language</h3>
-          <p class="prose">Like language, music is an organized system of sounds and symbols that communicates meaning and emotion. Notes are building blocks that are composed into larger and larger structures, usually following established conventions, patterns, and idioms. Grasping this framework will help you learn the songs you want to play, and write your own too.</p>
-          <h3>Music is fun!</h3>
-          <p class="prose">Creative self expression is one of life's great joys. Playing music can help you relax when you're feeling stressed. It can bring a sense of accomplishment when you master a challenging song. It can open up new ways to connect with people and put you in touch with new friends and communities. It can enrich your life immensely.</p>
-          <h3>We're here to help</h3>
-          <p class="prose">Our goal is to support your musical journey. Each student will move at their own pace, following the path that is right for them. Think of us as your sherpa up the mountain; your guide as you develop the skills to play piano, to experience the joy of music, to enrich your life, to have fun!</p>
-        </div>
+      </div>
 
-      </Grid>
-    </Container>
-  </div>
+      <div class="content-cta">
+        <Cta 
+          text="Ready to take the next step?"
+          buttonText="BOOK YOUR LESSON"
+          variant="about"
+        />
+      </div>
 
-  <Cta 
-    text="Ready to take the next step?"
-    buttonText="BOOK YOUR LESSON"
-    variant="about"
-  />
+    </div>
+  </Container>
+  
+
+  
   
 </div>
 
@@ -56,6 +60,15 @@ import Cta from "../UI/Cta.astro";
   background: var(--dark-parchment-2);
 }
 
+h2,
+h3,
+p {
+  color: var(--dark-brown-ink);
+}
+
+
+
+/* -------------------- Intro -------------------- */
 .intro {
   margin: 0;
   padding-top: var(--section-spacing-lg);
@@ -77,12 +90,6 @@ import Cta from "../UI/Cta.astro";
   }
 }
 
-h2,
-h3,
-p {
-  color: var(--dark-brown-ink);
-}
-
 h2 {
   margin-bottom: var(--section-spacing-sm);
   font-size: clamp(2.5rem, calc(2.5rem + 2vw), 5.25rem);
@@ -100,21 +107,82 @@ h2 span:first-child {
   margin-top: var(--section-spacing-sm);
 }
 
+
+
+/* -------------------- Content -------------------- */
 .content {
   padding-top: 1rem;
   padding-bottom: var(--section-spacing-sm);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "copy image"
+    "cta  image";
+  gap: 2rem;
 }
 
-.extra-points p.prose:last-of-type {
+.content-copy {
+  grid-area: copy;
+}
+
+.content-copy p.prose:last-of-type {
   margin-bottom: 0;
 }
 
-@media (max-width: 700px) {
-  .extra-points h3 {
+.content-image {
+  grid-area: image;
+}
+
+.content-cta {
+  grid-area: cta;
+  align-self: end;
+  padding-top: var(--space-sm);
+}
+
+
+@media (max-width: 1183px) {
+  .content {
+    grid-template-areas:
+      "copy image"
+      "cta  cta";
+  }
+
+  .content-cta {
+    padding-top: var(--space-md);
+  }
+}
+
+
+@media (max-width: 986px) {
+  .content {
+    grid-template-areas:
+      "copy image"
+      "copy cta";
+  }
+}
+
+
+@media (max-width: 750px) {
+  .content {
+    max-width: 50ch;
+    margin-inline: auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "copy"
+      "cta";
+  }
+
+  /* .content-copy {
+    max-width: 50ch;
+    margin-inline: auto;
+  } */
+  .content-copy h3 {
     text-align: center;
   }
 
-  .extra-points h3:first-of-type {
+  .content-copy h3:first-of-type {
     margin-top: var(--space-sm);
   }
 }
