@@ -26,16 +26,19 @@ const {
 @media (min-width: 701px) and (max-width: 900px) {
   .panel.standalone {
     grid-column: 1 / -1;
-    width: min(100%, 23rem);
+    width: min(100%, 21rem);
     margin-inline: auto;
   }
-  .panel.standalone h3 {
+  .overview .panel.standalone {
+    width: min(100%, 23rem);
+  }
+  .overview .panel.standalone h3 {
     font-size: 1.45rem;
   }
-  .panel.standalone h4 {
+  .overview .panel.standalone h4 {
     font-size: 1.3rem;
   }
-  .panel.standalone p {
+  .overview .panel.standalone p {
     font-size: 1.2rem;
   }
 }
