@@ -33,9 +33,9 @@ import Grid from '../UI/Grid.astro';
   </div>
 
   <Container size="extra-narrow">
-    <!-- <Rule variant="spacer"></Rule> -->
+    <Rule variant="spacer"></Rule>
 
-    <p class="copy">If you're unsure which format is the best fit or have needs outside what is described, feel free to <a href="/contact/">reach out</a>. We're always happy to discuss your situation and work with you to design a lesson plan that's a perfect fit.</p>
+    <p class="copy reach-out">If you're unsure which format is the best fit or have needs outside what is described, feel free to <a href="/contact/">reach out</a>. We're always happy to discuss your situation and work with you to design a lesson plan that's a perfect fit.</p>
    
   </Container>
 </div>
@@ -65,7 +65,7 @@ import Grid from '../UI/Grid.astro';
 }
 
 .main-content-block {
-  margin-bottom: 2.25rem;
+  /* margin-bottom: 2.25rem; */
 }
 
 .split-image {
@@ -84,8 +84,12 @@ import Grid from '../UI/Grid.astro';
   align-self: center;
 }
 
-.rates-intro-content p:last-of-type {
-  margin-bottom: 0;
+.rates-intro p {
+  margin-block: 0;
+}
+
+.rates-intro p.reach-out {
+  margin-top: -.5rem;
 }
 
 h2,
