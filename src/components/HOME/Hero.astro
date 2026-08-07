@@ -50,9 +50,11 @@ import heroImage from "../../assets/hero2.jpg";
 .hero .content {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-content: center;
-  transform: translateY(-3vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(1.5rem, 3vh, 3rem);
+  /* transform: translateY(-3vh); */
   z-index: 2;
 }
 
