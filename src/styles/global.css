@@ -44,7 +44,8 @@
   --parchment: #eee4d5;
   --dark-parchment: rgba(238 228 213 / 0.72);
   --dark-parchment-2: #d3c9bc;
-  --extra-dark-parchment: rgba(238 228 213 / 0.52);
+  /* --extra-dark-parchment: rgba(238 228 213 / 0.52); */
+  --extra-dark-parchment: #a39588;
   
   --gold: #6a553b;
   --bright-gold: #7E684A;
