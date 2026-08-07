@@ -12,24 +12,20 @@ import heroImage from "../../assets/hero2.jpg";
     class="hero-image"
   />
 
-  <!-- <div class="hero-content"> -->
-    <div class="hero-title-wrap">
-      <h1 class="hero-title hero-title-base">Private piano lessons<br/>in Brooklyn</h1>
-    </div>
-
+  <div class="content">
+    <h1>Private piano lessons<br/>in Brooklyn</h1>
     <Cta
       variant="hero"
       text="Individualized instruction for all ages and skill levels, tailored to your goals."
       buttonText="Schedule your first lesson"
     />
-  <!-- </div> -->
+  </div>
 
 </div>
 
 <style>
 .hero {
   position: relative;
-  min-height: max(100vh, 700px);
   min-height: max(100svh, 700px);
   overflow: hidden;
 }
@@ -51,88 +47,18 @@ import heroImage from "../../assets/hero2.jpg";
   z-index: 1;
 }
 
-.hero-title-wrap {
+.hero .content {
   position: absolute;
-  left: 0;
-  bottom: calc(50% + clamp(1.5rem, 4vh, 3.5rem));
-  width: 100%;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  transform: translateY(-3vh);
   z-index: 2;
-  /* visibility: hidden; */
 }
 
-/* .hero-title-wrap.ready {
-  visibility: visible;
-} */
-
-.hero-title {
-  position: relative;
-  inset-inline: 0;
-  margin: 0;
+.hero h1 {
   text-align: center;
   color: var(--parchment);
   font-size: clamp(2rem, 6vw, 2.7rem);
 }
-
-/* .hero-title.echo {
-  opacity: .4;
-} */
 </style>
-
-
-<script>
-// function buildTrail() {
-//   const titleWrap = document.querySelector(".hero-title-wrap");
-//   const title = titleWrap?.querySelector(".hero-title-base");
-//   const cta = document.querySelector(".cta.hero");
-
-//   if (!titleWrap || !title || !cta) return;
-
-//   titleWrap.querySelectorAll(".echo").forEach(el => el.remove());
-
-//   const hero = titleWrap.closest(".hero");
-
-//   if (!hero) return;
-
-//   const heroRect = hero.getBoundingClientRect();
-//   const ctaRect = cta.getBoundingClientRect();
-
-//   const titleHeight = title.getBoundingClientRect().height;
-//   const gap = 40;
-
-//   titleWrap.style.top = `${ctaRect.top - heroRect.top - titleHeight - gap}px`;
-
-//   const titleRect = title.getBoundingClientRect();
-//   const available = titleRect.top - heroRect.top;
-//   const spacing = titleHeight * 0.4;
-//   const count = Math.floor(available / spacing);
-
-//   for (let i = 1; i <= count; i++) {
-//     const echo = title.cloneNode(true);
-
-//     echo.classList.add("echo");
-//     echo.setAttribute("aria-hidden", "true");
-//     echo.style.transform = `translateY(${-i * spacing}px)`;
-
-//     const depth = i / count;
-//     echo.style.filter = `blur(${1.5 + depth}px)`;
-
-//     titleWrap.appendChild(echo);
-//   }
-
-//   titleWrap.classList.add("ready");
-// }
-
-// async function initTrail() {
-//   await document.fonts.ready;
-
-//   requestAnimationFrame(() => {
-//     requestAnimationFrame(() => {
-//       buildTrail();
-//     });
-//   });
-// }
-
-// initTrail();
-
-// window.addEventListener("resize", buildTrail);
-</script>

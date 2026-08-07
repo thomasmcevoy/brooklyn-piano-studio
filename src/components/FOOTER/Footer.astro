@@ -36,8 +36,8 @@ const { showCta } = Astro.props;
 
 <style>
 footer {
-  padding-top: var(--section-spacing-md);
-  padding-bottom: var(--space-sm);
+  padding-top: calc(var(--section-spacing-md) + var(--space-sm));
+  padding-bottom: var(--space-lg);
   background-color: var(--site-background-color);
 }
 
@@ -60,7 +60,7 @@ footer {
 }
 
 .copyright {
-  margin-top: var(--section-spacing-md);
+  margin-top: calc(var(--section-spacing-md) + var(--space-sm));
   text-align: center;
   font-style: italic;
   color: var(--slate-text-dark);

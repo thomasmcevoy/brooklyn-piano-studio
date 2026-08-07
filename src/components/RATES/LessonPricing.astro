@@ -9,49 +9,51 @@ import Panel from '../UI/Panel.astro';
   <Container size="wide">
     <SectionTitle>Lesson Pricing</SectionTitle>
     
-    <Grid variant="panels">
+    <div class="content">
+      <Grid variant="panels">
 
-      <Panel>
-        <h3>In Studio</h3>
-        <h4>Single private lesson:</h4>
-        <ul>
-          <li>30 mins:<span class="rate">$85</span></li>
-          <li>45 mins:<span class="rate">$130</span></li>
-          <li>1 hour:<span class="rate">$175</span></li>
-        </ul>
-        <h4>Monthly rates:</h4>
-        <ul>
-          <li>4 weekly x 30 mins:<span class="rate">$75 per lesson</span></li>
-          <li>4 weekly x 45 mins:<span class="rate">$120 per lesson</span></li>
-          <li>4 weekly x 1 hour:<span class="rate">$160 per lesson</span></li>
-        </ul>
-      </Panel>
+        <Panel>
+          <h3>In Studio</h3>
+          <h4>Single private lesson:</h4>
+          <ul>
+            <li>30 mins:<span class="rate">$85</span></li>
+            <li>45 mins:<span class="rate">$130</span></li>
+            <li>1 hour:<span class="rate">$175</span></li>
+          </ul>
+          <h4>Monthly rates:</h4>
+          <ul>
+            <li>4 weekly x 30 mins:<span class="rate">$75 per lesson</span></li>
+            <li>4 weekly x 45 mins:<span class="rate">$120 per lesson</span></li>
+            <li>4 weekly x 1 hour:<span class="rate">$160 per lesson</span></li>
+          </ul>
+        </Panel>
 
-      <Panel>
-        <h3>Online</h3>
-        <h4>Single private lesson:</h4>
-        <ul>
-          <li>30 mins:<span class="rate">$80</span></li>
-          <li>45 mins:<span class="rate">$125</span></li>
-          <li>1 hour:<span class="rate">$165</span></li>
-        </ul>
-        <h4>Monthly rates:</h4>
-        <ul>
-          <li>4 weekly x 30 mins:<span class="rate">$70 per lesson</span></li>
-          <li>4 weekly x 45 mins:<span class="rate">$115 per lesson</span></li>
-          <li>4 weekly x 1 hour:<span class="rate">$150 per lesson</span></li>
-        </ul>
-      </Panel>
-        
-      <Panel variant="standalone">
-        <h3>In Your Home</h3>
-        <p class="copy">Rates for lessons in your home are determined based on distance and availability.</p>
-      </Panel>
+        <Panel>
+          <h3>Online</h3>
+          <h4>Single private lesson:</h4>
+          <ul>
+            <li>30 mins:<span class="rate">$80</span></li>
+            <li>45 mins:<span class="rate">$125</span></li>
+            <li>1 hour:<span class="rate">$165</span></li>
+          </ul>
+          <h4>Monthly rates:</h4>
+          <ul>
+            <li>4 weekly x 30 mins:<span class="rate">$70 per lesson</span></li>
+            <li>4 weekly x 45 mins:<span class="rate">$115 per lesson</span></li>
+            <li>4 weekly x 1 hour:<span class="rate">$150 per lesson</span></li>
+          </ul>
+        </Panel>
+          
+        <Panel variant="standalone">
+          <h3>In Your Home</h3>
+          <p class="copy">Rates for lessons in your home are determined based on distance and availability.</p>
+        </Panel>
 
-    </Grid>
+      </Grid>
+    </div>
 
     <p class="sliding-scale">
-      <small>We don't want cost to be prohibitive or burdensome for people with financial constraints. If this applies to you, please inquire about our sliding scale.</small>
+      <small>We don't want the cost of tuition to be prohibitive or burdensome for students with financial constraints. If this applies to you, please inquire about our sliding scale.</small>
     </p>
   
   </Container>
@@ -59,8 +61,8 @@ import Panel from '../UI/Panel.astro';
 
 <style>
 .lesson-pricing {
-  padding-top: var(--section-spacing-lg);
-  padding-bottom: var(--section-spacing-md);
+  padding-top: var(--section-spacing-xl);
+  padding-bottom: calc(var(--section-spacing-md) + var(--space-xs));
   background: var(--walnut);
   color: var(--parchment);
 }
@@ -83,6 +85,12 @@ import Panel from '../UI/Panel.astro';
 .lesson-pricing li {
   margin-bottom: .425rem;
   white-space: nowrap;
+}
+
+
+.content {
+  padding-top: var(--space-xs);
+  padding-bottom: var(--space-lg);
 }
 
 .rate {
