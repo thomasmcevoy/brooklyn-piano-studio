@@ -42,9 +42,9 @@
   /* --light-parchment-2: #e8ddcff4; */
   --light-parchment: #dcd2c5;
   --parchment: #eee4d5;
-  --dark-parchment: rgb(238 228 213 / 0.72);
+  --dark-parchment: rgba(238 228 213 / 0.72);
   --dark-parchment-2: #d3c9bc;
-  --extra-dark-parchment: rgb(238 228 213 / 0.52);
+  --extra-dark-parchment: rgba(238 228 213 / 0.52);
   
   --gold: #6a553b;
   --bright-gold: #7E684A;
@@ -87,7 +87,7 @@
   --slate-text-light:  #707783;
   --slate-text-hover:  #9BA1AB;
   --slate-text-bright: #B8BEC8;
-  --site-background-color: rgb(19, 22.5, 30.5);
+  --site-background-color: rgba(19, 22.5, 30.5);
 
   /* bg-[#D8CEBC] text-[#4A4038] */
   --pico-font-family: "Gill Sans Book", sans-serif;
