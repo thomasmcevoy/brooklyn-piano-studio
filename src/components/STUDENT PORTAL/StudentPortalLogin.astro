@@ -20,6 +20,7 @@
       <input
         id="portal-password"
         type="password"
+        placeholder="Password"
         aria-label="Portal password"
         autocomplete="current-password"
         required
@@ -55,8 +56,8 @@
 }
 
 .lock {
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3.5rem;
+  height: 3.5rem;
   margin-bottom: 1.5rem;
   display: grid;
   place-items: center;
@@ -66,8 +67,8 @@
 }
 
 .lock svg {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.65rem;
+  height: 1.65rem;
 }
 
 #portal-login-form {
@@ -77,38 +78,55 @@
 
 #portal-password {
   width: 100%;
-  height: 3rem;
+  height: 2.5rem;
   padding: 0 3rem 0 1rem;
   box-sizing: border-box;
-  border: 1px solid #aaa;
-  border-radius: 0.25rem;
+  border: none;
+  border-radius: 0;
   background: white;
   outline: none;
   font-family: Arial, sans-serif;
-  color: #000;
-  caret-color: #000;
+  font-size: .8rem;
+  letter-spacing: .033rem;
+  color: var(--ink);
+  caret-color: var(--ink);
   line-height: 3rem;
 }
 
+#portal-password::placeholder {
+  color: #888;
+  opacity: .6;
+}
+
 #portal-password:focus {
-  border-color: #000;
-  box-shadow: inset 0 0 0 1px #000;
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border: none;
+  box-shadow: none;
 }
 
 #portal-login-form button {
   position: absolute;
   top: 50%;
   right: 0.75rem;
-  transform: translateY(calc(-50% - .385rem));
+  transform: translateY(calc(-50% - .53rem));
   width: auto;
   height: auto;
   margin: 0;
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--walnut);
-  font-size: 1.5rem;
+  color: #d9d9d9;
+  transition: color 150ms ease;
+  font-family: var(--system-glyph-font);
+  font-size: 1.7rem;
+  font-weight: 300;
   line-height: 1;
+}
+
+#portal-login-form button:hover,
+#portal-login-form button:focus-visible {
+  color: var(--ink);
 }
 
 :global(html.portal-login-active),
@@ -127,6 +145,7 @@
   const input = document.querySelector('#portal-password');
 
   document.documentElement.classList.add('portal-login-active');
+  input?.focus();
 
   async function hashPassword(password: string) {
     const data = new TextEncoder().encode(password);

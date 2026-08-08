@@ -37,6 +37,8 @@
 }
 
 :root {
+  --system-glyph-font: "-apple-system-body", "ui-sans-serif", "-apple-system", "system-ui", "Segoe UI", "Helvetica", "Apple Color Emoji", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
+  
   /*  COLORS  */
   /* --light-parchment: #e8ddcf; */
   /* --light-parchment-2: #e8ddcff4; */
