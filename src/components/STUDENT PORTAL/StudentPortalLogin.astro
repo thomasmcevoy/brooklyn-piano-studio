@@ -39,7 +39,7 @@
 
 <style>
 #portal-login {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   padding: 2rem;
@@ -98,7 +98,7 @@
   position: absolute;
   top: 50%;
   right: 0.75rem;
-  transform: translateY(calc(-50% - 7px));
+  transform: translateY(calc(-50% - .385rem));
   width: auto;
   height: auto;
   margin: 0;
@@ -113,7 +113,7 @@
 
 <script>
   const PASSWORD_HASH = '9c387859ea279781dd6407d7dc732a650e1444b0e434d298ce4841fd53b7f3d8';
-  const SESSION_KEY = 'student-portal-access';
+  // const SESSION_KEY = 'student-portal-access';
 
   const login = document.querySelector('#portal-login');
   const content = document.querySelector('#portal-content');
@@ -134,9 +134,9 @@
     content?.removeAttribute('hidden');
   }
 
-  if (sessionStorage.getItem(SESSION_KEY) === 'true') {
-    showPortal();
-  }
+  // if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+  //   showPortal();
+  // }
 
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -145,11 +145,8 @@
 
     const hash = await hashPassword(input.value);
 
-    console.log('Entered hash:', hash);
-console.log('Stored hash:', PASSWORD_HASH);
-
     if (hash === PASSWORD_HASH) {
-      sessionStorage.setItem(SESSION_KEY, 'true');
+      // sessionStorage.setItem(SESSION_KEY, 'true');
       showPortal();
     } else {
       input.value = '';
