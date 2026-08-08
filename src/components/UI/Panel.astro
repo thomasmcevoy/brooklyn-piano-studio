@@ -5,9 +5,9 @@ const {
 } = Astro.props;
 ---
 
-<article class={`panel ${variant} ${className}`}>
+<div class={`panel ${variant} ${className}`}>
   <slot />
-</article>
+</div>
 
 <style is:global>
 .panel {
@@ -29,16 +29,16 @@ const {
     width: min(100%, 21rem);
     margin-inline: auto;
   }
-  .overview .panel.standalone {
+  #overview .panel.standalone {
     width: min(100%, 23rem);
   }
-  .overview .panel.standalone h3 {
+  #overview .panel.standalone h3 {
     font-size: 1.38rem;
   }
-  .overview .panel.standalone h4 {
+  #overview .panel.standalone h4 {
     font-size: 1.43rem;
   }
-  .overview .panel.standalone p {
+  #overview .panel.standalone p {
     font-size: 1.2rem;
   }
 }

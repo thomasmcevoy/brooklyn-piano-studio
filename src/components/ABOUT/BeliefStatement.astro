@@ -6,7 +6,7 @@ import pianoStudent from "../../assets/piano-student.jpg";
 import Cta from "../UI/Cta.astro";
 ---
 
-<div class="belief-statement">
+<div id="belief-statement">
   
   <Container size="narrow">
     <div class="intro">
@@ -54,7 +54,7 @@ import Cta from "../UI/Cta.astro";
 </div>
 
 <style>
-.belief-statement {
+#belief-statement {
   margin: 0;
   padding-top: var(--section-spacing-lg);
   padding-bottom: var(--section-spacing-md);
@@ -76,7 +76,7 @@ p {
 }
 
 @media (max-width: 700px) {
-  .belief-statement {
+  #belief-statement {
     padding-block: var(--section-spacing-md);
   }
 
@@ -174,10 +174,6 @@ h2 span:first-child {
       "cta";
   }
 
-  /* .content-copy {
-    max-width: 50ch;
-    margin-inline: auto;
-  } */
   .content-copy h3 {
     text-align: center;
   }

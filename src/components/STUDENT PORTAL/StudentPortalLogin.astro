@@ -1,0 +1,159 @@
+<div id="portal-login">
+  <div class="login-content">
+
+    <div class="lock">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+
+    <form id="portal-login-form">
+      <input
+        id="portal-password"
+        type="password"
+        aria-label="Portal password"
+        autocomplete="current-password"
+        required
+      />
+
+      <button type="submit" aria-label="Enter portal">
+        →
+      </button>
+    </form>
+
+  </div>
+</div>
+
+<div id="portal-content" hidden>
+  <slot />
+</div>
+
+<style>
+#portal-login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: #f1f1f1;
+}
+
+.login-content {
+  width: min(16rem, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lock {
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  color: #999;
+}
+
+.lock svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+#portal-login-form {
+  position: relative;
+  width: 100%;
+}
+
+#portal-password {
+  width: 100%;
+  height: 3rem;
+  padding: 0 3rem 0 1rem;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  border-radius: 0.25rem;
+  background: white;
+  outline: none;
+  font-family: Arial, sans-serif;
+  color: #000;
+  caret-color: #000;
+  line-height: 3rem;
+}
+
+#portal-password:focus {
+  border-color: #000;
+  box-shadow: inset 0 0 0 1px #000;
+}
+
+#portal-login-form button {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(calc(-50% - 7px));
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--walnut);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+</style>
+
+<script>
+  const PASSWORD_HASH = '9c387859ea279781dd6407d7dc732a650e1444b0e434d298ce4841fd53b7f3d8';
+  const SESSION_KEY = 'student-portal-access';
+
+  const login = document.querySelector('#portal-login');
+  const content = document.querySelector('#portal-content');
+  const form = document.querySelector('#portal-login-form');
+  const input = document.querySelector('#portal-password');
+
+  async function hashPassword(password: string) {
+    const data = new TextEncoder().encode(password);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+
+    return Array.from(new Uint8Array(hash))
+      .map(byte => byte.toString(16).padStart(2, '0'))
+      .join('');
+  }
+
+  function showPortal() {
+    login?.setAttribute('hidden', '');
+    content?.removeAttribute('hidden');
+  }
+
+  if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+    showPortal();
+  }
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (!(input instanceof HTMLInputElement)) return;
+
+    const hash = await hashPassword(input.value);
+
+    console.log('Entered hash:', hash);
+console.log('Stored hash:', PASSWORD_HASH);
+
+    if (hash === PASSWORD_HASH) {
+      sessionStorage.setItem(SESSION_KEY, 'true');
+      showPortal();
+    } else {
+      input.value = '';
+      input.focus();
+    }
+  });
+</script>

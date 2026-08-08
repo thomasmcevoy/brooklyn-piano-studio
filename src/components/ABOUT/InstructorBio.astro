@@ -5,7 +5,7 @@ import SectionTitle from '../UI/SectionTitle.astro';
 import headshot from "../../assets/home-with-plants-crop-3.jpg";
 ---
 
-<div class="instructor-bio">
+<div id="instructor-bio">
     
   <SectionTitle>About the Instructor</SectionTitle>
   
@@ -26,7 +26,7 @@ import headshot from "../../assets/home-with-plants-crop-3.jpg";
 </div>
 
 <style>
-.instructor-bio {
+#instructor-bio {
   display: flow-root;
   padding-top: calc(var(--section-spacing-xl) + var(--space-xs));
   padding-bottom: calc(var(--section-spacing-lg) + var(--space-xs));
@@ -35,7 +35,7 @@ import headshot from "../../assets/home-with-plants-crop-3.jpg";
 }
 
 @media (max-width: 700px) {
-  .instructor-bio {
+  #instructor-bio {
     padding-block: calc(var(--section-spacing-md) + var(--space-xs));
   }
 }
@@ -59,11 +59,11 @@ a:hover {
   color: var(--dark-antique-gold-hover);
 }
 
-.instructor-bio p.prose {
+#instructor-bio p.prose {
   line-height: 1.62;
 }
 
-.instructor-bio p:last-child {
+#instructor-bio p:last-child {
   margin-bottom: 0;
 }
 

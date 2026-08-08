@@ -5,7 +5,7 @@ import Grid from '../UI/Grid.astro';
 import Panel from '../UI/Panel.astro';
 ---
 
-<div class="lesson-pricing">
+<div id="lesson-pricing">
   <Container size="wide">
     <SectionTitle>Lesson Pricing</SectionTitle>
     
@@ -60,7 +60,7 @@ import Panel from '../UI/Panel.astro';
 </div>
 
 <style>
-.lesson-pricing {
+#lesson-pricing {
   padding-top: var(--section-spacing-xl);
   padding-bottom: calc(var(--section-spacing-md) + var(--space-xs));
   background: var(--walnut);
@@ -68,21 +68,21 @@ import Panel from '../UI/Panel.astro';
 }
 
 @media (max-width: 700px) {
-  .lesson-pricing {
+  #lesson-pricing {
     padding-top: var(--section-spacing-md);
   }
 }
 
-.lesson-pricing h2 {
+#lesson-pricing h2 {
   text-align: center;
   color: inherit;
 }
 
-.lesson-pricing h4 {
+#lesson-pricing h4 {
   margin-bottom: .75rem;
 }
 
-.lesson-pricing li {
+#lesson-pricing li {
   margin-bottom: .425rem;
   white-space: nowrap;
 }

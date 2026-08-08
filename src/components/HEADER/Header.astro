@@ -1,7 +1,10 @@
 ---
 import Container from '../UI/Container.astro';
 import Wordmark from '../UI/Wordmark.astro';
-import Nav from './HeaderNav.astro';
+import MainNav from './MainNav.astro';
+import PortalNav from './PortalNav.astro';
+
+const { portal = false } = Astro.props;
 ---
 
 <header id="site-header">
@@ -12,7 +15,7 @@ import Nav from './HeaderNav.astro';
         <Wordmark text="Brooklyn Piano Studio" class="header-wordmark"/>
       </a>
     
-      <Nav/>
+      {portal ? <PortalNav /> : <MainNav />}
     
     </div>
   </Container>

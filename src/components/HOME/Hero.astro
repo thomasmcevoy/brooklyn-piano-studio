@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import heroImage from "../../assets/hero2.jpg";
 ---
 
-<div class="hero">
+<div id="hero">
 
   <Image
     src={heroImage}
@@ -24,7 +24,7 @@ import heroImage from "../../assets/hero2.jpg";
 </div>
 
 <style>
-.hero {
+#hero {
   position: relative;
   min-height: max(100svh, 700px);
   overflow: hidden;
@@ -39,7 +39,7 @@ import heroImage from "../../assets/hero2.jpg";
   z-index: 0;
 }
 
-.hero::before {
+#hero::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -47,7 +47,7 @@ import heroImage from "../../assets/hero2.jpg";
   z-index: 1;
 }
 
-.hero .content {
+#hero .content {
   position: absolute;
   inset: 0;
   display: flex;
@@ -58,7 +58,7 @@ import heroImage from "../../assets/hero2.jpg";
   z-index: 2;
 }
 
-.hero h1 {
+#hero h1 {
   text-align: center;
   color: var(--parchment);
   font-size: clamp(2rem, 6vw, 2.7rem);

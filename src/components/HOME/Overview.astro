@@ -4,7 +4,7 @@ import Grid from '../UI/Grid.astro';
 import Panel from '../UI/Panel.astro';
 ---
 
-<div class="overview">
+<div id="overview">
   <Container size="wide">
     <Grid variant="panels">
 
@@ -56,7 +56,7 @@ import Panel from '../UI/Panel.astro';
 </div>
 
 <style>
-.overview {
+#overview {
   padding-top: var(--section-spacing-lg);
   padding-bottom: var(--section-spacing-md);
   background: var(--walnut);
@@ -65,17 +65,17 @@ import Panel from '../UI/Panel.astro';
 }
 
 @media (max-width: 700px) {
-  .overview {
+  #overview {
     padding-bottom: calc(var(--section-spacing-sm) + var(--space-sm));
   }
 }
 
-.overview h4 {
+#overview h4 {
   display: inline;
   margin-right: .7rem;
 }
 
-.overview p {
+#overview p {
   display: inline;
   padding-bottom: 1.5rem;
 }
