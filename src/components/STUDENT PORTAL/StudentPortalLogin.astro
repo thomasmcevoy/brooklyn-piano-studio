@@ -110,6 +110,11 @@
   font-size: 1.5rem;
   line-height: 1;
 }
+
+:global(html.portal-login-active),
+:global(html.portal-login-active body) {
+  overflow: hidden;
+}
 </style>
 
 <script>
@@ -120,6 +125,8 @@
   const content = document.querySelector('#portal-content');
   const form = document.querySelector('#portal-login-form');
   const input = document.querySelector('#portal-password');
+
+  document.documentElement.classList.add('portal-login-active');
 
   async function hashPassword(password: string) {
     const data = new TextEncoder().encode(password);
@@ -148,6 +155,7 @@
 
     if (hash === PASSWORD_HASH) {
       // sessionStorage.setItem(SESSION_KEY, 'true');
+      document.documentElement.classList.remove('portal-login-active');
       showPortal();
     } else {
       input.value = '';
