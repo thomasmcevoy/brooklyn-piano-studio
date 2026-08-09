@@ -1,15 +1,13 @@
 ---
-import Container from '../UI/Container.astro';
-import Wordmark from '../UI/Wordmark.astro';
-import Grid from '../UI/Grid.astro';
-import Cta from '../UI/Cta.astro';
-import Nav from './FooterNav.astro';
-import Blurb from './FooterBlurb.astro';
-
-const { showCta } = Astro.props;
+import Container from '../../UI/Container.astro';
+import Wordmark from '../../UI/Wordmark.astro';
+import Grid from '../../UI/Grid.astro';
+import Cta from '../../UI/Cta.astro';
+import Nav from './Nav.astro';
+import Blurb from './Blurb.astro';
 ---
 
-<footer>
+<footer id="site-footer">
   <Container size="medium-flexible">
     
     <div class="wordmark-container">
@@ -35,14 +33,14 @@ const { showCta } = Astro.props;
 </footer>
 
 <style>
-footer {
+#site-footer {
   padding-top: calc(var(--section-spacing-md) + var(--space-sm));
   padding-bottom: var(--space-lg);
   background-color: var(--site-background-color);
 }
 
 @media (max-width: 700px) {
-  footer {
+  #site-footer {
     padding-top: calc(var(--section-spacing-sm) + var(--space-md));
     padding-bottom: var(--space-xs);
   }
@@ -65,11 +63,6 @@ footer {
   font-style: italic;
   color: var(--slate-text-dark);
   letter-spacing: .01rem;
-}
-
-.copyright span {
-  font-style: normal;
-  padding-block: 1.5rem;
 }
 
 @media (max-width: 700px) {

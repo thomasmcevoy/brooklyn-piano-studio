@@ -1,16 +1,16 @@
 ---
 import { Image } from 'astro:assets';
-import handsOnKeys from '../../assets/hands-on-keys.jpg';
-import Container from '../UI/Container.astro';
-import Rule from '../UI/Rule.astro';
-import Grid from '../UI/Grid.astro';
+import handsOnKeys from '../../../assets/hands-on-keys.jpg';
+import Container from '../../UI/Container.astro';
+import Rule from '../../UI/Rule.astro';
+import Grid from '../../UI/Grid.astro';
 ---
 
 <div id="rates-intro">
 
   <Container size="extra-narrow">
     <h2>Rates & Lesson&nbsp;Options</h2>
-    <Rule variant="spacer"></Rule>
+    <Rule variant="spacer" width="full" />
   </Container>
 
   <Container size="medium-flexible">
@@ -31,7 +31,7 @@ import Grid from '../UI/Grid.astro';
   </Container>
 
   <Container size="extra-narrow">
-    <Rule variant="spacer"></Rule>
+    <Rule variant="spacer" width="full" />
 
     <p class="prose reach-out">If you're unsure which format is the best fit or have needs outside what is described, feel free to <a href="/#contact">reach out</a>. We're always happy to discuss your situation and work with you to design a lesson plan that's a perfect fit.</p>
    

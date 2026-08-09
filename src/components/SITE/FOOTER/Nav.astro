@@ -1,18 +1,18 @@
-<nav>
+<nav id="site-footer-nav">
   <ul>
     <li><a href="/#about">ABOUT</a></li>
     <li><a href="/#rates">RATES</a></li>
     <li><a href="/#contact">CONTACT</a></li>
-    <li><a href="/student-portal">PORTAL</a></li>
+    <li><a href="/portal">PORTAL</a></li>
   </ul>
 </nav>
 
 <style>
-nav {
+#site-footer-nav {
   justify-self: center;
 }
 
-nav ul {
+#site-footer-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -22,11 +22,11 @@ nav ul {
   align-items: center;
 }
 
-nav li {
+#site-footer-nav li {
   padding: .25rem;
 }
 
-nav a {
+#site-footer-nav a {
   display: block;
   padding-block: .25rem;
   
@@ -38,22 +38,7 @@ nav a {
   transition: opacity 150ms ease;
 }
 
-nav a:hover {
+#site-footer-nav a:hover {
   color: var(--slate-text-hover);
 }
-
-/*  make footer nav text flush left  */
-/* @media (max-width: 700px) {
-  nav {
-    justify-self: end;
-  }
-
-  nav ul {
-    align-items: flex-end;
-  }
-
-  nav a {
-    text-align: right;
-  }
-} */
 </style>

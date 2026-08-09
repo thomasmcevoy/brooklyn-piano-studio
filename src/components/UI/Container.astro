@@ -1,8 +1,11 @@
 ---
-const { size } = Astro.props;
+const {
+  size,
+  aligned
+} = Astro.props;
 ---
 
-<div class={`container ${size}`}>
+<div class={`container ${size} ${aligned}`}>
   <slot />
 </div>
 
@@ -13,19 +16,28 @@ const { size } = Astro.props;
   padding-inline: 0;
 }
 
-.wide {
+.container.wide {
   --max-width: 64rem;
 }
 
-.medium-flexible {
+.container.medium-flexible {
   --max-width: clamp(400px, calc(75vw + 4rem), 1000px);
 }
 
-.narrow {
+.container.narrow {
   --max-width: 60ch;
 }
 
-.extra-narrow {
+.container.medium-narrow {
+  --max-width: 54ch;
+}
+
+.container.extra-narrow {
   --max-width: 48ch;
+}
+
+.container.left {
+  text-align: left;
+  margin-left: 0;
 }
 </style>

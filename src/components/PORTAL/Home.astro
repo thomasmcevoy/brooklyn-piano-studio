@@ -1,0 +1,105 @@
+---
+import Container from '../UI/Container.astro';
+import Rule from '../UI/Rule.astro';
+---
+
+<div id="portal-home">
+  <Container size="wide">
+
+    <Container size="narrow" aligned="left">
+      <div class="indented">
+        <h2>Student Portal</h2>
+        <p class="copy">A growing repository of reference materials: articles, guides, notes, memoranda, aides-mémoires, elucidations, elaborations, arrangements, transcriptions, and sundry supplementals to support your study in between lessons.</p>
+      </div>
+    </Container>
+
+    <Rule variant="spacer" width="full" />
+
+    <div class="indented">
+      <section id="foundations">
+        <h3>Foundations</h3>
+        <a>Getting started</a>
+        <a>Chord & scale basics</a>
+        <a>How to build chords</a>
+        <a>Chord qualities: major, minor, and more</a>
+        <a>On how chords and scales are the same</a>
+        <a>Modes of major scales</a>
+        <a>Major and minor keys</a>
+        <a>On how chords move</a>
+      </section>
+
+      <section id="arrangements">
+        <h3>Arrangements</h3>
+        <a>Joe Hisaishi: One Summer's Day (from Spirited Away)</a>
+        <a>Joe Hisaishi: Merry Go Round of Life (from Howl's Moving Castle)</a>
+        <a>Joe Hisaishi: The Wind Forest (from My Neighbor Totoro)</a>
+      </section>
+
+      <section id="transcriptions">
+        <h3>Transcriptions</h3>
+        <a>Red Garland: Trane's Blues</a>
+        <a>Red Garland: Please Send Me Someone to Love</a>
+        <br>
+        <a>Wynton Kelly: Freddie Freeloader</a>
+        <a>Wynton Kelly: Sweet Pumpkin</a>
+        <a>Wynton Kelly: Sassy</a>
+        <a>Wynton Kelly: Swingin' Till the Girls Come Home</a>
+        <a>Wynton Kelly: On Green Dolphin Street</a>
+        <a>Wynton Kelly: Kelly Blue</a>
+        <br>
+        <a>Barry Harris: Chasin' the Bird</a>
+        <a>Barry Harris: Moose the Mooche</a>
+        <a>Barry Harris: Woody'n you</a>
+        <a>Barry Harris: No Name Blues</a>
+        <a>Barry Harris: Tea for Two</a>
+        <br>
+        <a>McCoy Tyner: Alone Together</a>
+        <a>McCoy Tyner: Soul Eyes</a>
+        <a>McCoy Tyner: Inception</a>
+        <a>McCoy Tyner: Passion Dance</a>
+        <br>
+        <a>Phineas Newborn: Sugar Ray</a>
+        <a>Phineas Newborn: Reflection</a>
+        <br>
+        <a>Oscar Peterson: Chicago (arr.)</a>
+        <a>Oscar Peterson: Thag's Dance (arr.)</a>
+        <br>
+        <a>Donald Byrd: Omicron</a>
+        
+      </section>
+    </div>
+
+  </Container>
+</div>
+
+<style>
+#portal-home {
+  padding-top: var(--section-spacing-sm);
+  padding-bottom: var(--space-sm);
+  background: var(--parchment);
+  color: var(--ink);
+}
+
+.indented {
+  padding-left: 1.33rem;
+}
+a {
+  display: block;
+}
+
+p {
+  color: inherit;
+}
+
+h2 {
+  color: var(--dark-brown-ink);
+}
+
+h3 {
+  color: var(--brown-ink);
+}
+
+section {
+  margin-block: 2rem;
+}
+</style>

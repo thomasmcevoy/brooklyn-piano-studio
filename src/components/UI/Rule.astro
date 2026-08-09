@@ -1,17 +1,28 @@
 ---
-const { variant } = Astro.props;
+const {
+  variant,
+  width = "normal",
+  margin = "normal"
+} = Astro.props;
 ---
 
-<div class={`rule ${variant}`} aria-hidden="true"></div>
+<div class={`rule ${variant} ${width}-width ${margin}-margin`} aria-hidden="true"></div>
 
 <style>
 .rule {
   margin-inline: auto;
+}
+
+.rule.normal-width {
   width: 75%;
 }
 
+.rule.full-width {
+  width: 100%;
+}
+
 @media (max-width: 500px) {
-  .rule {
+  .rule.normal-width {
     width: calc(75% + (500px - 100vw) * 0.25);
   }
 }
@@ -42,15 +53,19 @@ const { variant } = Astro.props;
 /* -------------- spacer variant -------------- */
 .rule.spacer {
   height: 1px;
-  margin-block: var(--section-spacing-sm);
   background: #b4ab9e;
 }
-:global(#rates-intro .rule.spacer) {
-  width: 100%;
+
+.rule.spacer.normal-margin {
+  margin-block: var(--section-spacing-sm);
+}
+
+.rule.spacer.zero-margin {
+  margin-block: 0;
 }
 
 @media (max-width: 700px) {
-  .rule.spacer {
+  .rule.spacer.normal-margin {
     margin-block: var(--space-lg);
   }
 }

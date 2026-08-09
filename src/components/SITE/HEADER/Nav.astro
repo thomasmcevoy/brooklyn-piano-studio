@@ -2,17 +2,17 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<nav>
+<nav id="site-header-nav">
   <ul>
     <li><a href="/#about">About</a></li>
     <li><a href="/#rates">Rates</a></li>
     <li><a href="/#contact">Contact</a></li>
-    <li><a href="/student-portal">Student Portal</a></li>
+    <li><a href="/portal">Student Portal</a></li>
   </ul>
 </nav>
 
 <style>
-nav ul {
+#site-header-nav ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,37 +22,37 @@ nav ul {
 }
 
 @media (max-width: 700px) {
-  nav {
+  #site-header-nav {
     width: 100%;
   }
-  nav ul {
+  #site-header-nav ul {
     width: 100%;
     justify-content: center;
   }
 }
 
 @media (max-width: 500px) {
-  nav ul {
+  #site-header-nav ul {
     justify-content: space-evenly;
     gap: 0rem;
   }
 }
 
-nav li {
+#site-header-nav li {
   margin: 0;
 }
 
-nav li a:not(.active):hover {
+#site-header-nav li a:not(.active):hover {
   color: var(--gold);
 }
 
-nav a {
+#site-header-nav a {
   position: relative;
   text-decoration: none;
   transform: translateY(.15rem);  /* compensating for gill sans' high vertical placement */;
 }
 
-nav a.active::after {
+#site-header-nav a.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -65,8 +65,8 @@ nav a.active::after {
   transition: transform .25s ease;
 }
 
-nav a:hover::after,
-nav a.active::after {
+#site-header-nav a:hover::after,
+#site-header-nav a.active::after {
   transform: scaleX(1);
 }
 </style>

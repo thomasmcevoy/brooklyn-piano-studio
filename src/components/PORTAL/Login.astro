@@ -136,15 +136,27 @@
 </style>
 
 <script>
-  const PASSWORD_HASH = '9c387859ea279781dd6407d7dc732a650e1444b0e434d298ce4841fd53b7f3d8';
-  // const SESSION_KEY = 'student-portal-access';
+const SESSION_KEY = 'student-portal-access';
+const PASSWORD_HASH = '9c387859ea279781dd6407d7dc732a650e1444b0e434d298ce4841fd53b7f3d8';
 
+function showPortal() {
   const login = document.querySelector('#portal-login');
   const content = document.querySelector('#portal-content');
+
+  login?.setAttribute('hidden', '');
+  content?.removeAttribute('hidden');
+}
+
+const hasAccess = sessionStorage.getItem(SESSION_KEY) === 'true';
+
+if (hasAccess) {
+  showPortal();
+} else {
   const form = document.querySelector('#portal-login-form');
   const input = document.querySelector('#portal-password');
 
   document.documentElement.classList.add('portal-login-active');
+
   input?.focus();
 
   async function hashPassword(password: string) {
@@ -156,15 +168,6 @@
       .join('');
   }
 
-  function showPortal() {
-    login?.setAttribute('hidden', '');
-    content?.removeAttribute('hidden');
-  }
-
-  // if (sessionStorage.getItem(SESSION_KEY) === 'true') {
-  //   showPortal();
-  // }
-
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -173,7 +176,7 @@
     const hash = await hashPassword(input.value);
 
     if (hash === PASSWORD_HASH) {
-      // sessionStorage.setItem(SESSION_KEY, 'true');
+      sessionStorage.setItem(SESSION_KEY, 'true');
       document.documentElement.classList.remove('portal-login-active');
       showPortal();
     } else {
@@ -181,4 +184,5 @@
       input.focus();
     }
   });
+}
 </script>

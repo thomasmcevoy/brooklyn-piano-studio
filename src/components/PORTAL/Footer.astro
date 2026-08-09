@@ -1,0 +1,43 @@
+---
+import Container from '../UI/Container.astro';
+import Rule from '../UI/Rule.astro';
+---
+
+<footer id="portal-footer">
+  <Container size="wide">
+
+    <Container size="narrow" aligned="left">
+      <Rule variant="spacer" width="full"/>
+
+        <p>If you would like to study together,<br>we'd be glad to hear from you.</p>
+        <p><a href="/#contact">[ Reach out → ]</a></p>
+
+        <p class="copyright">
+          <small>&copy; 2026 Brooklyn Piano Studio. All rights reserved.</small>
+        </p>
+
+    </Container>
+    
+  </Container>
+</footer>
+
+<style>
+#portal-footer {
+  background: var(--parchment);
+  color: var(--dark-brown-ink);
+}
+
+#portal-footer p,
+#portal-footer a {
+  color: inherit;
+  opacity: .92;
+}
+
+.copyright {
+  margin-block: 0;
+  padding-block: 2rem;
+  text-align: left;
+  font-style: italic;
+  letter-spacing: .01rem;
+}
+</style>

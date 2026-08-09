@@ -1,0 +1,64 @@
+---
+import Container from '../../UI/Container.astro';
+import Wordmark from '../../UI/Wordmark.astro';
+import Nav from './Nav.astro';
+---
+
+<header id="site-header">
+  <Container size="wide">
+    <div class="header-inner">
+      
+      <a href="/" class="wordmark-container">
+        <Wordmark text="Brooklyn Piano Studio" class="header-wordmark"/>
+      </a>
+    
+      <Nav />
+    
+    </div>
+  </Container>
+</header>
+
+<style>
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--dark-parchment);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgb(255 255 255 / 0.15);
+  box-shadow: 0 2px 8px rgba(66, 54, 45, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: .375rem;
+}
+
+.wordmark-container {
+  font-size: 1.8rem;
+  transform: translateY(-.25rem);  /* fix wordmark vertical position  */
+}
+
+:global(#site-header a) {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: center;  /* is this doing anything? */
+    padding-block: 0
+  }
+  .wordmark-container {
+    transform: translateY(.6rem);  /* set to 0 for more compact header */
+  }
+  :global(header a) {
+    transform: translateY(.3rem);  /* set to 0 for more compact header */
+  }
+}
+</style>
