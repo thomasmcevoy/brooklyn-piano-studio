@@ -8,10 +8,10 @@ import Rule from '../UI/Rule.astro';
 
     
       <Container size="narrow">
-        <div class="preface">
-        <h2>Student Portal</h2>
-        <p class="copy">A growing repository of reference materials: articles, guides, notes, memoranda, aides-mémoires, elucidations, elaborations, arrangements, transcriptions, and sundry supplementals to support your study in between lessons.</p>
-    </div>  
+        <div class="frontmatter">
+          <h2>FROM THE ARCHIVES</h2>
+          <p class="copy">A growing repository of reference materials: articles, guides, notes, memoranda, aides-mémoires, elucidations, elaborations, arrangements, transcriptions, and sundry supplementals to support your study in between lessons.</p>
+        </div>  
       </Container>
     
 
@@ -82,25 +82,37 @@ import Rule from '../UI/Rule.astro';
   color: var(--ink);
 }
 
-.preface {
+.frontmatter {
   margin-inline: auto;
-  padding: 2rem 1.33rem 1rem;
+  padding-block: 3.5rem;
+  padding-inline: 1.33rem;
+}
+
+.frontmatter h2 {
+  text-align: center;
+  color: var(--dark-brown-ink);
+  font-family: "Gill Sans Condensed";
+  font-size: 1.33rem;
+  letter-spacing: .16rem;
+  margin-bottom: 1.6rem;
+}
+
+.frontmatter p {
+  font-style: italic;
+  line-height: 1.78;
+  margin-bottom: 0;
 }
 
 .indented {
   padding-left: 1.33rem;
 }
+
 a {
   display: block;
 }
 
 p {
   color: inherit;
-}
-
-h2 {
-  text-align: center;
-  color: var(--dark-brown-ink);
 }
 
 h3 {
