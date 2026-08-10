@@ -6,12 +6,14 @@ import Rule from '../UI/Rule.astro';
 <div id="portal-home">
   <Container size="wide">
 
-    <Container size="narrow" aligned="left">
-      <div class="indented">
+    
+      <Container size="narrow">
+        <div class="preface">
         <h2>Student Portal</h2>
         <p class="copy">A growing repository of reference materials: articles, guides, notes, memoranda, aides-mémoires, elucidations, elaborations, arrangements, transcriptions, and sundry supplementals to support your study in between lessons.</p>
-      </div>
-    </Container>
+    </div>  
+      </Container>
+    
 
     <Rule variant="spacer" width="full" />
 
@@ -80,6 +82,11 @@ import Rule from '../UI/Rule.astro';
   color: var(--ink);
 }
 
+.preface {
+  margin-inline: auto;
+  padding: 2rem 1.33rem 1rem;
+}
+
 .indented {
   padding-left: 1.33rem;
 }
@@ -92,6 +99,7 @@ p {
 }
 
 h2 {
+  text-align: center;
   color: var(--dark-brown-ink);
 }
 
