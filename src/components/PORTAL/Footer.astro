@@ -6,13 +6,20 @@ import Rule from '../UI/Rule.astro';
 <footer id="portal-footer">
   <Container size="wide">
 
-    <!-- <Container size="narrow" aligned="left"> -->
-      <Rule variant="spacer" width="full"/>
+    <Rule variant="spacer" width="full"/>
 
-      <p>If you would like to study together,<br>we'd be glad to hear from you.</p>
-      <p><a href="/#contact">[ Reach out → ]</a></p>
+    <h4>A NOTE ON SUPPORT</h4>
+    <div class="footer-grid">
+      <div class="support-us">
+        <p>The archive is offered gratis, for the benefit of the interested student. Should you find these materials useful and wish to contribute toward its continued growth, your generosity is gratefully received.</p>
+        <p><a href="/#contact">[ Support us → ]</a></p>
+      </div>
 
-    <!-- </Container> -->
+      <div class="reach-out">
+        <p>If you would like to study together, or wish to inquire about the lessons and materials offered herein, we'd be glad to hear from you. The study of these things is, after all, best pursued in good company.</p>
+        <p><a href="/#contact">[ Reach out → ]</a></p>
+      </div>
+    </div>
 
     <p class="colophon">
       <small>&copy; 2026 Brooklyn Piano Studio. All rights reserved.</small>
@@ -30,12 +37,38 @@ import Rule from '../UI/Rule.astro';
 #portal-footer p,
 #portal-footer a {
   color: inherit;
-  opacity: .92;
+  opacity: .95;
 }
+
+#portal-footer h4 {
+  margin-bottom: 1.25rem;
+
+  color: var(--dark-brown-ink);
+  opacity: .88;
+  font-family: 'Gill Sans Condensed';
+  font-size: 1.15rem;
+  letter-spacing: .14rem;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  font-size: 0.97rem;
+  letter-spacing: .01rem;
+  line-height: 1.55;
+  opacity: .88;
+}
+
+.support-us,
+.reach-out {
+  flex: 1;
+}
+
 
 .colophon {
   margin-block: 0;
-  padding-block: 2rem 1rem;
+  padding-block: 2.75rem 1rem;
   text-align: center;
   font-style: italic;
   letter-spacing: .01rem;
