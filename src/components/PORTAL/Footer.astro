@@ -11,7 +11,7 @@ import Rule from '../UI/Rule.astro';
     <h4>A NOTE ON SUPPORT</h4>
     <div class="footer-grid">
       <div class="support-us">
-        <p>The archive is offered gratis, for the benefit of the interested student. Should you find these materials useful and wish to contribute toward its continued growth, your generosity is gratefully received.</p>
+        <p>The archive is offered gratis, for the benefit of the interested student. Should you find these materials useful and wish to contribute toward its maintenance, and that of the archivist, your generosity is gratefully received.</p>
         <p><a href="/#contact">[ Support us → ]</a></p>
       </div>
 
@@ -53,11 +53,18 @@ import Rule from '../UI/Rule.astro';
 .footer-grid {
   display: flex;
   justify-content: space-between;
-  gap: 5rem;
+  gap: var(--section-spacing-md);
   font-size: 0.97rem;
   letter-spacing: .01rem;
   line-height: 1.55;
   opacity: .88;
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
 }
 
 .support-us,
@@ -68,9 +75,15 @@ import Rule from '../UI/Rule.astro';
 
 .colophon {
   margin-block: 0;
-  padding-block: 2.75rem 1rem;
+  padding-block: var(--section-spacing-sm) var(--space-xs);
   text-align: center;
   font-style: italic;
   letter-spacing: .01rem;
+}
+
+@media (max-width: 600px) {
+  .colophon {
+    padding-top: var(--space-md);
+  }
 }
 </style>
