@@ -11,7 +11,7 @@ import Rule from '../UI/Rule.astro';
       <a href="/" class="wordmark-container">
         <Wordmark text="Brooklyn Piano Studio" class="header-wordmark"/>
       </a>
-      <a href="/" class="back-to-site">[ ← Back to Site ]</a>
+      <a href="/" class="back-to-site">[ ← Back<span> to Site</span> ]</a>
     </div>
 
     <Rule variant="spacer" width="full" margin="zero"/>
@@ -43,8 +43,11 @@ import Rule from '../UI/Rule.astro';
   text-decoration: none;
 }
 
-/* @media (max-width: 450px) {
-  .header-inner {
+@media (max-width: 450px) {
+  .back-to-site span {
+    display: none;
+  }
+  /* .header-inner {
     flex-direction: column;
     align-items: center;  
     padding-block: 0;
@@ -54,8 +57,8 @@ import Rule from '../UI/Rule.astro';
   }
   :global(header a) {
     transform: translateY(.3rem);  
-  }
-} */
+  } */
+}
 
 #portal-header .back-to-site {
   color: var(--taupe);
