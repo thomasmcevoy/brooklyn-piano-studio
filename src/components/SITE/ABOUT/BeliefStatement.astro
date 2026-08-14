@@ -61,6 +61,13 @@ import Cta from "../../UI/Cta.astro";
   background: var(--dark-parchment-2);
 }
 
+@media (max-width: 700px) {
+  #belief-statement {
+    padding-top: var(--section-spacing-md);
+    padding-bottom: var(--section-spacing-sm);
+  }
+}
+
 h2,
 h3,
 p {
@@ -76,10 +83,6 @@ p {
 }
 
 @media (max-width: 700px) {
-  #belief-statement {
-    padding-block: var(--section-spacing-md);
-  }
-
   .intro {
     padding-top: var(--section-spacing-md);
   }
